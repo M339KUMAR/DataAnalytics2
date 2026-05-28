@@ -216,6 +216,8 @@ if page == "Home":
     #    df1[col] = df1[col].astype(str)
 
     st.write("***EXPLORATORY DATA ANALYSIS***")
+    if st.button("Generate EDA Report"):
+       with st.spinner("Generating EDA Report... Please wait"):
     try:
        df_report = df1.copy()
 
