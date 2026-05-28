@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd 
 import openpyxl
 import os
-import PIL import Image
+from PIL import Image
 
 # ---------------------------------------------------
 # PAGE CONFIG
