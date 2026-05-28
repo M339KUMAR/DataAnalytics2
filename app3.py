@@ -12,7 +12,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
---------------------------------------
+#--------------------------------------
 #Image Icons Display-->
 image_path1 = "HR_Dept_1.jpeg"
 image_path2 = "graph_bar-chart.jpeg"
