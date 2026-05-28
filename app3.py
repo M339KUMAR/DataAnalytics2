@@ -32,7 +32,7 @@ if os.path.exists(image_path1) & os.path.exists(image_path2):
     with col2:
         st.image(img2, use_column_width=True)
     with col3:
-        st.write("HR Data Analysis \n Helps Manager of HR Dept to & \n Predict The Risk of Employees leaving the Company & Accordingly Plan Ahead To take necessary steps of Advt-Recruit-Train-Payroll and so on")
+        st.write("HR Data Analysis \n Helps Manager of HR Dept to \n Predict The Risk of Employees leaving the Company & Accordingly Plan Ahead To take necessary steps of Advt-Recruit-Train-Payroll and so on")
 else:
     st.error(f"Image not found: {image_path}")
 #--------------------------------------
