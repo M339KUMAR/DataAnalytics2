@@ -5,6 +5,7 @@ import openpyxl
 import os
 from PIL import Image
 from ydata_profiling import ProfileReport
+import streamlit.components.v1 as components
 
 # ---------------------------------------------------
 # PAGE CONFIG
