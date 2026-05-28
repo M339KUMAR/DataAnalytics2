@@ -1,5 +1,7 @@
 
 import streamlit as st
+import pandas as pd 
+import openpyxl
 
 # ---------------------------------------------------
 # PAGE CONFIG
@@ -172,6 +174,9 @@ if page == "Home":
 
     st.markdown("---")
 
+    df = pd.read_excel('HHS_Unaccompanied_Alien_Children_Program.xlsx', engine='openpyxl')
+    st.dataframe(df)
+    
     st.success(
         "Use the sidebar to navigate through the dashboard modules."
     )
