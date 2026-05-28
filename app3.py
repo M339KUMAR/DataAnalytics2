@@ -226,7 +226,7 @@ if page == "Home":
                        height=1000, 
                        scrolling=True)
     except Exception as e: 
-       st.write("Issue in Report Generation:")
+       st.write("Issue in Report Generation: {e}")
     finally :
        st.write("Generating EDA Report..")
  
