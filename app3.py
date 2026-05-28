@@ -4,6 +4,7 @@ import pandas as pd
 import openpyxl
 import os
 from PIL import Image
+from ydata_profiling import ProfileReport
 
 # ---------------------------------------------------
 # PAGE CONFIG
@@ -205,7 +206,27 @@ if page == "Home":
     df = pd.read_excel('Palo Alto Networks.xlsx', engine='openpyxl')
     st.write("***📌Palo Alto Networks Dataset***")
     st.dataframe(df)
-    
+
+
+    st.write("***EXPLORATORY DATA ANALYSIS***")
+    try:
+       #from ydata_profiling import ProfileReport
+       report = ProfileReport(df, explorative=True)
+       # Save report
+       #profile.to_file("report.html")
+       html = report.to_html()
+
+       # Read HTML file
+       #with open("report.html", "r", encoding="utf-8") as f:
+       #     html = f.read()
+
+       # Display in Streamlit
+       components.html(html, height=1000, scrolling=True)
+    except ValueError: 
+       st.write("Issue in Report Generation:")
+    finally :
+       st.write("Generating EDA Report..")
+ 
     st.success(
         "Use the sidebar to navigate through the dashboard modules."
     )
