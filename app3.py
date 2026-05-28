@@ -226,6 +226,13 @@ if page == "Home":
                        height=1000, 
                        scrolling=True)
     except Exception as e: 
+       st.write(df1.dtypes)
+       for col in df1.columns:
+          try:
+             ProfileReport(df1[[col]], minimal=True)
+          except Exception as e:
+             st.write(f"Problem in column: {col}")
+             st.write(e)
        st.write(f"Issue in Report Generation: {e}")
     finally :
        st.write("Generating EDA Report..")
@@ -233,7 +240,6 @@ if page == "Home":
     st.success(
         "Use the sidebar to navigate through the dashboard modules."
     )
-
 # ---------------------------------------------------
 # PAGE ROUTING MESSAGE
 # ---------------------------------------------------
@@ -244,3 +250,16 @@ else:
         f"The **{page}** page will be created in "
         f"`pages/{page.replace(' ', '_')}.py`"
     )
+
+
+
+
+
+
+
+
+
+
+
+
+
