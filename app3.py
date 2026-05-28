@@ -211,30 +211,31 @@ if page == "Home":
     st.dataframe(df1)
  
     # Convert object columns to string
-    for col in df1.select_dtypes(include="object").columns:
-        df1[col] = df1[col].fillna("Missing")
-        df1[col] = df1[col].astype(str)
+    #for col in df1.select_dtypes(include="object").columns:
+    #    df1[col] = df1[col].fillna("Missing")
+    #    df1[col] = df1[col].astype(str)
 
     st.write("***EXPLORATORY DATA ANALYSIS***")
     try:
-       #from ydata_profiling import ProfileReport
-       report = ProfileReport(df1, explorative=True, minimal=True)
-       # Save report
-       #profile.to_file("report.html")
-       html = report.to_html()
+       df_report = df1.copy()
 
-       # Read HTML file
-       #with open("report.html", "r", encoding="utf-8") as f:
-       #     html = f.read()
+       for col in df_report.select_dtypes(include="object").columns:
+           df_report[col] = (
+                             df_report[col]
+                             .fillna("Missing")
+                             .astype(str)
+                            )
 
-       # Display in Streamlit
-       components.html(html, 
-                       height=1000, 
-                       scrolling=True)
-    except Exception as e: 
-       st.write(f"Issue in Report Generation: {e}")
-    finally :
-       st.write("Generating EDA Report..")
+           profile = ProfileReport(
+                             df_report,
+                             explorative=True,
+                             minimal=True
+                            )
+
+        st_profile_report(profile)
+
+    except Exception as e:
+        st.error(f"EDA Report Error: {e}")
  
     st.success(
         "Use the sidebar to navigate through the dashboard modules."
