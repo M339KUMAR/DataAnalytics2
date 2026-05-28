@@ -2,6 +2,7 @@
 import streamlit as st
 import pandas as pd 
 import openpyxl
+import os
 
 # ---------------------------------------------------
 # PAGE CONFIG
@@ -17,7 +18,7 @@ st.set_page_config(
 image_path1 = "HR_Dept_1.jpeg"
 image_path2 = "graph_bar-chart.jpeg"
 
-if os.path.exists(image_path1) and os.path.exists(image_path2):
+if os.path.exists(image_path1) & os.path.exists(image_path2):
     img1 = Image.open(image_path1)
     img1 = img1.resize((300, 150))
     img2 = Image.open(image_path2)
