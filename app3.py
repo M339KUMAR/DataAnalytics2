@@ -204,15 +204,15 @@ if page == "Home":
 
     st.markdown("---")
 
-    df = pd.read_excel('Palo Alto Networks.xlsx', engine='openpyxl')
+    df1 = pd.read_excel('Palo Alto Networks.xlsx', engine='openpyxl')
     st.write("***📌Palo Alto Networks Dataset***")
-    st.dataframe(df)
+    st.dataframe(df1)
 
 
     st.write("***EXPLORATORY DATA ANALYSIS***")
     try:
        #from ydata_profiling import ProfileReport
-       report = ProfileReport(df, explorative=True)
+       report = ProfileReport(df1, explorative=True)
        # Save report
        #profile.to_file("report.html")
        html = report.to_html()
@@ -222,7 +222,9 @@ if page == "Home":
        #     html = f.read()
 
        # Display in Streamlit
-       components.html(html, height=1000, scrolling=True)
+       components.html(html, 
+                       height=1000, 
+                       scrolling=True)
     except Exception as e: 
        st.write("Issue in Report Generation:")
     finally :
