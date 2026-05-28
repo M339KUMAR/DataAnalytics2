@@ -10,4 +10,6 @@ numpy==1.26.4
 setuptools==75.8.0
 ydata-profiling==4.16.1
 
+streamlit-ydata-profiling==0.2.1
+
 Pillow>=10.0.0
