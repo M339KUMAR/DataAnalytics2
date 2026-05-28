@@ -6,6 +6,8 @@ import os
 from PIL import Image
 from ydata_profiling import ProfileReport
 import streamlit.components.v1 as components
+from streamlit_ydata_profiling import st_profile_report
+
 
 # ---------------------------------------------------
 # PAGE CONFIG
