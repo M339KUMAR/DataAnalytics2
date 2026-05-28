@@ -105,6 +105,12 @@ if page == "Home":
        """
     st.markdown(page_bg, unsafe_allow_html=True)
 
+st.markdown("<h1 style='text-align: center;'>UNIFIED MENTOR</h1>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center;'> Data Analytics Intern</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center;'> Project-2: HR Analytics</h2>", unsafe_allow_html=True)
+st.write("***📌Palo Alto Networks Dashboard***")
+
+ 
     st.markdown(
         '<p class="main-title">HR Analytics Dashboard</p>',
         unsafe_allow_html=True
