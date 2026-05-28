@@ -207,12 +207,16 @@ if page == "Home":
     df1 = pd.read_excel('Palo Alto Networks.xlsx', engine='openpyxl')
     st.write("***📌Palo Alto Networks Dataset***")
     st.dataframe(df1)
-
+ 
+    # Convert object columns to string
+    for col in df1.select_dtypes(include="object").columns:
+        df1[col] = df1[col].fillna("Missing")
+        df1[col] = df1[col].astype(str)
 
     st.write("***EXPLORATORY DATA ANALYSIS***")
     try:
        #from ydata_profiling import ProfileReport
-       report = ProfileReport(df1, explorative=True)
+       report = ProfileReport(df1, explorative=True, minimal=True)
        # Save report
        #profile.to_file("report.html")
        html = report.to_html()
@@ -226,13 +230,6 @@ if page == "Home":
                        height=1000, 
                        scrolling=True)
     except Exception as e: 
-       st.write(df1.dtypes)
-       for col in df1.columns:
-          try:
-             ProfileReport(df1[[col]], minimal=True)
-          except Exception as e:
-             st.write(f"Problem in column: {col}")
-             st.write(e)
        st.write(f"Issue in Report Generation: {e}")
     finally :
        st.write("Generating EDA Report..")
