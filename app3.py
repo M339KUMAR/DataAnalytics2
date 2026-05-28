@@ -108,8 +108,7 @@ if page == "Home":
     st.markdown("<h1 style='text-align: center;'>UNIFIED MENTOR</h1>", unsafe_allow_html=True)
     st.markdown("<h2 style='text-align: center;'> Data Analytics Intern</h2>", unsafe_allow_html=True)
     st.markdown("<h2 style='text-align: center;'> Project-2: HR Analytics</h2>", unsafe_allow_html=True)
-    st.write("***📌Palo Alto Networks Dashboard***")
-
+    
  
     st.markdown(
         '<p class="main-title">HR Analytics Dashboard</p>',
@@ -204,6 +203,7 @@ if page == "Home":
     st.markdown("---")
 
     df = pd.read_excel('Palo Alto Networks.xlsx', engine='openpyxl')
+    st.write("***📌Palo Alto Networks Dataset***")
     st.dataframe(df)
     
     st.success(
