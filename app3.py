@@ -6,7 +6,7 @@ import os
 from PIL import Image
 from ydata_profiling import ProfileReport
 import streamlit.components.v1 as components
-from streamlit_ydata_profiling import st_profile_report
+#from streamlit_ydata_profiling import st_profile_report
 
 
 # ---------------------------------------------------
@@ -219,23 +219,36 @@ if page == "Home":
     try:
        df_report = df1.copy()
 
+       # Fix object columns
        for col in df_report.select_dtypes(include="object").columns:
            df_report[col] = (
-                             df_report[col]
-                             .fillna("Missing")
-                             .astype(str)
-                            )
+               df_report[col]
+               .fillna("Missing")
+               .astype(str)
+               )
 
            profile = ProfileReport(
-                             df_report,
-                             explorative=True,
-                             minimal=True
-                            )
+               df_report,
+               explorative=True,
+               minimal=True
+              )
 
-        st_profile_report(profile)
+       # Save report
+       profile.to_file("EDA_Report.html")
+
+       st.success("EDA Report Generated Successfully")
+
+       # Download button
+       with open("EDA_Report.html", "rb") as file:
+            st.download_button(
+                      label="Download EDA Report",
+                      data=file,
+                      file_name="EDA_Report.html",
+                      mime="text/html"
+                     )
 
     except Exception as e:
-        st.error(f"EDA Report Error: {e}")
+           st.error(f"Error: {e}")
  
     st.success(
         "Use the sidebar to navigate through the dashboard modules."
