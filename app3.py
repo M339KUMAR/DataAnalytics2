@@ -223,7 +223,7 @@ if page == "Home":
 
        # Display in Streamlit
        components.html(html, height=1000, scrolling=True)
-    except ValueError: 
+    except Exception as e: 
        st.write("Issue in Report Generation:")
     finally :
        st.write("Generating EDA Report..")
