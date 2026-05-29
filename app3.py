@@ -187,19 +187,19 @@ st.subheader("📂 Dataset Information")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-        st.metric(
+    st.metric(
             label="Total Features",
             value="31"
         )
 
  with col2:
-        st.metric(
+    st.metric(
             label="Target Variable",
             value="Attrition"
         )
 
 with col3:
-        st.metric(
+    st.metric(
             label="Company",
             value="Palo Alto"
         )
