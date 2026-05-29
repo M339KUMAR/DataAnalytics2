@@ -218,39 +218,39 @@ if page == "Home":
     st.write("***EXPLORATORY DATA ANALYSIS***")
     if st.button("Generate EDA Report"):
        with st.spinner("Generating EDA Report... Please wait"):
-    try:
-       df_report = df1.copy()
+          try:
+             df_report = df1.copy()
 
-       # Fix object columns
-       for col in df_report.select_dtypes(include="object").columns:
-           df_report[col] = (
-               df_report[col]
-               .fillna("Missing")
-               .astype(str)
-               )
+             # Fix object columns
+             for col in df_report.select_dtypes(include="object").columns:
+                 df_report[col] = (
+                                  df_report[col]
+                                  .fillna("Missing")
+                                  .astype(str)
+                                  )
 
-           profile = ProfileReport(
-               df_report,
-               explorative=True,
-               minimal=True
-              )
+                 profile = ProfileReport(
+                                  df_report,
+                                  explorative=True,
+                                  minimal=True
+                                 )
 
-       # Save report
-       profile.to_file("EDA_Report.html")
+                 # Save report
+                 profile.to_file("EDA_Report.html")
 
-       st.success("EDA Report Generated Successfully")
+                 st.success("EDA Report Generated Successfully")
 
-       # Download button
-       with open("EDA_Report.html", "rb") as file:
-            st.download_button(
-                      label="Download EDA Report",
-                      data=file,
-                      file_name="EDA_Report.html",
-                      mime="text/html"
-                     )
+                 # Download button
+                 with open("EDA_Report.html", "rb") as file:
+                      st.download_button(
+                          label="Download EDA Report",
+                          data=file,
+                          file_name="EDA_Report.html",
+                          mime="text/html"
+                          )
 
-    except Exception as e:
-           st.error(f"Error: {e}")
+          except Exception as e:
+                 st.error(f"Error: {e}")
  
     st.success(
         "Use the sidebar to navigate through the dashboard modules."
