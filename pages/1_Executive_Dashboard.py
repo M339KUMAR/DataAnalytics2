@@ -244,7 +244,7 @@ with col3:
         "Attrition Rate %",
         f"{attrition_rate:.2f}%"
     )
-
+ 
 with col4:
     st.metric(
         "High Risk Employees",
