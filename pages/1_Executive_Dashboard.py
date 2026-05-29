@@ -86,7 +86,6 @@ df["Workload_Stress_Flag"] = np.where(
 #).columns.tolist()
 
 df2 = df.copy()
-df2['Attrition_Flag']=(df['Attrition_Flag'])
 
 # ----------------------------------------------------
 # TARGET VARIABLE
@@ -136,6 +135,7 @@ for col in categorical_cols:
 #st.dataframe(df[categorical_cols]) #->No Attrition &, Flag
 #st.write(df[categorical_cols].shape)  #->  1470, 7
 #st.write(df2)  #-> 1470, 31
+st.dataframe(df)   #->
 #-----------------------------------------------------
 
 X = df.drop(
