@@ -59,21 +59,43 @@ df["Workload_Stress_Flag"] = np.where(
 # -----------------------------------------------------
 # ENCODE TARGET
 # -----------------------------------------------------
-df["Attrition_Flag"] = np.where(
-    df["Attrition"] == "Yes",
-    1,
-    0
-)
-
-# -----------------------------------------------------
-# MODEL TRAINING FOR RISK SCORE
-# -----------------------------------------------------
+#df["Attrition_Flag"] = np.where(
+#    df["Attrition"] == "Yes",
+#    1,
+#    0
+#)
 #categorical_cols = df.select_dtypes(
 #    include="object"
 #).columns.tolist()
 
+# -----------------------------------------------------
+# CLEAN ATTRITION COLUMN
+# -----------------------------------------------------
+df["Attrition"] = (
+    df["Attrition"]
+    .astype(str)
+    .str.strip()
+    .str.upper()
+)
+
+# -----------------------------------------------------
+# ENCODE TARGET
+# -----------------------------------------------------
+df["Attrition_Flag"] = df["Attrition"].map({
+    "YES": 1,
+    "NO": 0
+})
+
+# -----------------------------------------------------
+# DEBUG CHECK
+# -----------------------------------------------------
+st.write("Attrition Counts")
+st.write(df["Attrition"].value_counts())
+
+st.write("Attrition Flag Counts")
+st.write(df["Attrition_Flag"].value_counts())
+
 #categorical_cols.remove("Attrition")
-#-----------------------------------------------------
 categorical_cols = df.select_dtypes(
     include="object"
 ).columns.tolist()
@@ -87,6 +109,11 @@ for col in categorical_cols:
     df[col] = encoder.fit_transform(
         df[col].astype(str)
     )
+# -----------------------------------------------------
+# MODEL TRAINING FOR RISK SCORE
+# -----------------------------------------------------
+
+#-----------------------------------------------------
 
 X = df.drop(
     columns=["Attrition", "Attrition_Flag"]
