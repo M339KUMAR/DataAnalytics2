@@ -85,8 +85,6 @@ df["Workload_Stress_Flag"] = np.where(
 #    include="object"
 #).columns.tolist()
 
-df2 = df.copy()
-
 # ----------------------------------------------------
 # TARGET VARIABLE
 # -----------------------------------------------------
