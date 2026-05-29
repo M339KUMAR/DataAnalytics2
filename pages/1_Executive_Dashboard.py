@@ -208,6 +208,7 @@ filtered_df = df[
 ]
 
 st.write(filtered_df)
+st.write(filtered_df.shape)
 
 # -----------------------------------------------------
 # KPI METRICS
