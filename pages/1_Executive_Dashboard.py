@@ -58,6 +58,7 @@ df["Workload_Stress_Flag"] = np.where(
 st.write(df["Attrition"].head(20))
 st.write(df["Attrition"].dtype)
 st.write(df["Attrition"].unique())
+"""
 # -----------------------------------------------------
 # CLEAN ATTRITION COLUMN
 # -----------------------------------------------------
@@ -80,8 +81,32 @@ df["Attrition_Flag"] = ((df["Attrition"] == "yes").astype(int))
 
 #categorical_cols = df.select_dtypes(
 #    include="object"
-#).columns.tolist()
+#).columns.tolist()"""
+# -----------------------------------------------------
+# TARGET VARIABLE
+# -----------------------------------------------------
+if df["Attrition"].dtype == "object":
 
+    df["Attrition"] = (
+        df["Attrition"]
+        .astype(str)
+        .str.strip()
+        .str.lower()
+    )
+
+    df["Attrition_Flag"] = (
+        df["Attrition"] == "yes"
+    ).astype(int)
+
+else:
+    # already numeric
+    df["Attrition_Flag"] = (
+        df["Attrition"]
+    ).astype(int)
+
+# DEBUG
+st.write(df["Attrition"].unique())
+st.write(df["Attrition_Flag"].value_counts())
 # -----------------------------------------------------
 # DEBUG CHECK
 # -----------------------------------------------------
