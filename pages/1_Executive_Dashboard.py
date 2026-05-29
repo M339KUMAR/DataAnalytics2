@@ -84,7 +84,11 @@ df["Workload_Stress_Flag"] = np.where(
 #categorical_cols = df.select_dtypes(
 #    include="object"
 #).columns.tolist()
-# -----------------------------------------------------
+
+df2 = df.copy()
+df2['Attrition_Flag']=(df[Attrition_Flag])
+
+# ----------------------------------------------------
 # TARGET VARIABLE
 # -----------------------------------------------------
 if df["Attrition"].dtype == "object":
@@ -105,9 +109,6 @@ else:
     df["Attrition_Flag"] = (
         df["Attrition"]
     ).astype(int)
-
-df2= df.copy()
-df2["Attrition_Flag"] = (df["Attrition_Flag"])
 
 #st.write(df["Attrition"].unique())
 #st.write(df["Attrition_Flag"].value_counts())
