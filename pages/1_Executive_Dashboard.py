@@ -207,8 +207,8 @@ filtered_df = df[
     (df["Risk_Category"].isin(risk_filter))
 ]
 
-st.write(filtered_df)
-st.write(filtered_df.shape)
+#st.write(filtered_df)
+#st.write(filtered_df.shape) -> 1144, 38
 
 # -----------------------------------------------------
 # KPI METRICS
