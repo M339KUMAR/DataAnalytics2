@@ -69,11 +69,18 @@ df["Attrition_Flag"] = np.where(
 # -----------------------------------------------------
 # MODEL TRAINING FOR RISK SCORE
 # -----------------------------------------------------
+#categorical_cols = df.select_dtypes(
+#    include="object"
+#).columns.tolist()
+
+#categorical_cols.remove("Attrition")
+#-----------------------------------------------------
 categorical_cols = df.select_dtypes(
     include="object"
 ).columns.tolist()
 
-categorical_cols.remove("Attrition")
+if "Attrition" in categorical_cols:
+    categorical_cols.remove("Attrition")
 
 encoder = LabelEncoder()
 
