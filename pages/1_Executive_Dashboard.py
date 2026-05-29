@@ -76,9 +76,7 @@ df["Attrition"] = (
 #    1,
 #    0
 #)
-df["Attrition_Flag"] = (
-    df["Attrition"] == "yes",
-).astype(int)
+df["Attrition_Flag"] = ((df["Attrition"] == "yes",).astype(int))
 
 #categorical_cols = df.select_dtypes(
 #    include="object"
