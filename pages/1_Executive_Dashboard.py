@@ -64,6 +64,11 @@ df["Workload_Stress_Flag"] = np.where(
 #    1,
 #    0
 #)
+df["Attrition_Flag"] = np.where(
+    df["Attrition"] == "Yes",
+    1,
+    0
+)
 #categorical_cols = df.select_dtypes(
 #    include="object"
 #).columns.tolist()
@@ -81,10 +86,10 @@ df["Attrition"] = (
 # -----------------------------------------------------
 # ENCODE TARGET
 # -----------------------------------------------------
-df["Attrition_Flag"] = df["Attrition"].map({
-    "YES": 1,
-    "NO": 0
-})
+#df["Attrition_Flag"] = df["Attrition"].map({
+#    "YES": 1,
+#    "NO": 0
+#})
 
 # -----------------------------------------------------
 # DEBUG CHECK
