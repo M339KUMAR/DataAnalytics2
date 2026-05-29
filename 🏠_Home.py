@@ -4,8 +4,8 @@ import pandas as pd
 import openpyxl
 import os
 from PIL import Image
-from ydata_profiling import ProfileReport
-import streamlit.components.v1 as components
+#from ydata_profiling import ProfileReport
+#import streamlit.components.v1 as components
 #from streamlit_ydata_profiling import st_profile_report
 
 
@@ -216,7 +216,7 @@ st.dataframe(df1)
     #for col in df1.select_dtypes(include="object").columns:
     #    df1[col] = df1[col].fillna("Missing")
     #    df1[col] = df1[col].astype(str)
-
+"""
 st.write("***EXPLORATORY DATA ANALYSIS***")
 if st.button("Generate EDA Report"):
     with st.spinner("Generating EDA Report... Please wait"):
@@ -249,7 +249,7 @@ if st.button("Generate EDA Report"):
                           data=file,
                           file_name="EDA_Report.html",
                           mime="text/html"
-                          )
+                          )"""
 
         except Exception as e:
                  st.error(f"Error: {e}")
