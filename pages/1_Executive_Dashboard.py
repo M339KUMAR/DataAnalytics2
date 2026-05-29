@@ -114,12 +114,6 @@ df2["Attrition_Flag"] = (df["Attrition_Flag"])
 # -----------------------------------------------------
 # DEBUG CHECK
 # -----------------------------------------------------
-#st.write("Attrition Counts")
-#st.write(df["Attrition"].value_counts())
-
-#st.write("Attrition Flag Counts")
-#st.write(df["Attrition_Flag"].value_counts())
-
 #categorical_cols.remove("Attrition")
 
 categorical_cols = df.select_dtypes(
