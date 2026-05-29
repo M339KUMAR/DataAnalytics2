@@ -231,20 +231,20 @@ if st.button("Generate EDA Report"):
                                   .astype(str)
                                   )
 
-                 profile = ProfileReport(
+             profile = ProfileReport(
                                   df_report,
                                   explorative=True,
                                   minimal=True
                                  )
 
-                 # Save report
-                 profile.to_file("EDA_Report.html")
+             # Save report
+             profile.to_file("EDA_Report.html")
 
-                 st.success("EDA Report Generated Successfully")
+             st.success("EDA Report Generated Successfully")
 
-                 # Download button
-                 with open("EDA_Report.html", "rb") as file:
-                      st.download_button(
+             # Download button
+             with open("EDA_Report.html", "rb") as file:
+                  st.download_button(
                           label="Download EDA Report",
                           data=file,
                           file_name="EDA_Report.html",
