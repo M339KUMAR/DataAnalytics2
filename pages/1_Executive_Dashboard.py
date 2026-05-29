@@ -312,10 +312,10 @@ with col3:
         role_chart,
         use_container_width=True
     )
-
-with col4:
 st.write(chart_dataframe.head())
 st.write(chart_dataframe.shape)
+with col4:
+
     overtime_chart = px.box(
         filtered_df,
         x="OverTime",
