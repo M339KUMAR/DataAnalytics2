@@ -100,37 +100,37 @@ page = st.sidebar.radio(
 # ---------------------------------------------------
 #if page == "Home":
 
-    page_bg = """
+page_bg = """
        <style>
        [data-testid="stAppViewContainer"] {
        background-color: lightblue;
        }
         </style>
        """
-    st.markdown(page_bg, unsafe_allow_html=True)
+st.markdown(page_bg, unsafe_allow_html=True)
 
-    st.markdown("<h1 style='text-align: center;'>UNIFIED MENTOR</h1>", unsafe_allow_html=True)
-    st.markdown("<h2 style='text-align: center;'> Data Analytics Intern</h2>", unsafe_allow_html=True)
-    st.markdown("<h2 style='text-align: center;'> Project-2: HR Analytics</h2>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>UNIFIED MENTOR</h1>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center;'> Data Analytics Intern</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center;'> Project-2: HR Analytics</h2>", unsafe_allow_html=True)
     
  
-    st.markdown(
+st.markdown(
         '<p class="main-title">HR Analytics Dashboard</p>',
         unsafe_allow_html=True
     )
 
-    st.markdown(
+st.markdown(
         '<p class="sub-title">'
         'Predict Employee Attrition Risk using Machine Learning'
         '</p>',
         unsafe_allow_html=True
     )
 
-    st.markdown("---")
+st.markdown("---")
 
-    st.subheader("📌 Problem Statement")
+st.subheader("📌 Problem Statement")
 
-    st.write("""
+st.write("""
     **Palo Alto Networks** faces major HR challenges such as:
 
     - Sudden and unanticipated resignations
@@ -138,9 +138,9 @@ page = st.sidebar.radio(
     - Reactive countermeasures that come too late
     """)
 
-    st.subheader("🎯 Organizational Need")
+st.subheader("🎯 Organizational Need")
 
-    st.write("""
+st.write("""
     The organization requires:
 
     - A systematic way to predict employee attrition risk
@@ -148,9 +148,9 @@ page = st.sidebar.radio(
     - Visibility into key drivers influencing exit decisions
     """)
 
-    st.subheader("⚙️ Methodology")
+st.subheader("⚙️ Methodology")
 
-    st.markdown("""
+st.markdown("""
     #### 1. Data Preprocessing
     - Encode categorical variables
     - Scale numerical columns
@@ -180,9 +180,9 @@ page = st.sidebar.radio(
     - **High Risk:** > 60%
     """)
 
-    st.markdown("---")
+st.markdown("---")
 
-    st.subheader("📂 Dataset Information")
+st.subheader("📂 Dataset Information")
 
     col1, col2, col3 = st.columns(3)
 
@@ -204,18 +204,18 @@ page = st.sidebar.radio(
             value="Palo Alto"
         )
 
-    st.markdown("---")
+st.markdown("---")
 
-    df1 = pd.read_excel('Palo Alto Networks.xlsx', engine='openpyxl')
-    st.write("***📌Palo Alto Networks Dataset***")
-    st.dataframe(df1)
+df1 = pd.read_excel('Palo Alto Networks.xlsx', engine='openpyxl')
+st.write("***📌Palo Alto Networks Dataset***")
+st.dataframe(df1)
  
     # Convert object columns to string
     #for col in df1.select_dtypes(include="object").columns:
     #    df1[col] = df1[col].fillna("Missing")
     #    df1[col] = df1[col].astype(str)
 
-    st.write("***EXPLORATORY DATA ANALYSIS***")
+st.write("***EXPLORATORY DATA ANALYSIS***")
     if st.button("Generate EDA Report"):
        with st.spinner("Generating EDA Report... Please wait"):
           try:
@@ -252,7 +252,7 @@ page = st.sidebar.radio(
           except Exception as e:
                  st.error(f"Error: {e}")
  
-    st.success(
+st.success(
         "Use the sidebar to navigate through the dashboard modules."
     )
 # ---------------------------------------------------
