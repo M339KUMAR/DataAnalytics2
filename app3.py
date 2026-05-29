@@ -218,9 +218,9 @@ st.dataframe(df1)
     #    df1[col] = df1[col].astype(str)
 
 st.write("***EXPLORATORY DATA ANALYSIS***")
-    if st.button("Generate EDA Report"):
-       with st.spinner("Generating EDA Report... Please wait"):
-          try:
+if st.button("Generate EDA Report"):
+    with st.spinner("Generating EDA Report... Please wait"):
+        try:
              df_report = df1.copy()
 
              # Fix object columns
@@ -251,7 +251,7 @@ st.write("***EXPLORATORY DATA ANALYSIS***")
                           mime="text/html"
                           )
 
-          except Exception as e:
+        except Exception as e:
                  st.error(f"Error: {e}")
  
 st.success(
