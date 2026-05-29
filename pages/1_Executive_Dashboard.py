@@ -134,7 +134,9 @@ for col in categorical_cols:
 #st.write(df[categorical_cols].shape)  #->  1470, 7
 #st.write(df2)  #-> 1470, 31
 #st.dataframe(df)   #->
-st.write(df.shape)
+#st.write(df.shape) #1470 36
+st.dataframe(df[["Attrition", "Attrition_Flag"]]
+st.daraframe(df[["Attrition_Flag"]]
 #-----------------------------------------------------
 
 X = df.drop(
