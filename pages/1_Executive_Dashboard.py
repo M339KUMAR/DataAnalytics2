@@ -59,6 +59,11 @@ df["Workload_Stress_Flag"] = np.where(
 #st.write(df["Attrition"].dtype)
 #st.write(df["Attrition"].unique())
 
+ df2= df.copy()
+  df2["Attrition_Flag"] = (
+    df["Attrition_Flag"]
+   )
+#filterd_df2 = df2.copy()
 # -----------------------------------------------------
 # CLEAN ATTRITION COLUMN
 # -----------------------------------------------------
