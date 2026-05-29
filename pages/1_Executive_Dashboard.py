@@ -291,8 +291,8 @@ with col2:
         dept_chart,
         use_container_width=True
     )
-st.write(dept_chart.head())
-st.write(dept_chart.shape)
+st.write(dept_attrition.head())
+st.write(dept_attrition.shape)
 # -----------------------------------------------------
 # CHARTS ROW 2
 # -----------------------------------------------------
@@ -311,8 +311,6 @@ with col3:
         role_chart,
         use_container_width=True
     )
-st.write(role_chart.head())
-st.write(role_chart.shape)
 
 with col4:
 
@@ -328,8 +326,7 @@ with col4:
         overtime_chart,
         use_container_width=True
     )
-st.write(overtime_chart.head())
-st.write(overtime_chart.shape)
+    
 st.markdown("---")
 
 # -----------------------------------------------------
