@@ -58,7 +58,7 @@ df["Workload_Stress_Flag"] = np.where(
 #st.write(df["Attrition"].head(20))
 #st.write(df["Attrition"].dtype)
 #st.write(df["Attrition"].unique())
-"""
+
 # -----------------------------------------------------
 # CLEAN ATTRITION COLUMN
 # -----------------------------------------------------
@@ -81,7 +81,7 @@ df["Workload_Stress_Flag"] = np.where(
 
 #categorical_cols = df.select_dtypes(
 #    include="object"
-#).columns.tolist()"""
+#).columns.tolist()
 # -----------------------------------------------------
 # TARGET VARIABLE
 # -----------------------------------------------------
@@ -253,6 +253,10 @@ with col4:
 
 st.markdown("---")
 
+df2= df.copy()
+df2["Attrition_Flag"] = (
+    df["Attrition_Flag"]
+)
 # -----------------------------------------------------
 # CHARTS ROW 1
 # -----------------------------------------------------
@@ -291,8 +295,7 @@ with col2:
         dept_chart,
         use_container_width=True
     )
-st.write(dept_attrition.head())
-st.write(dept_attrition.shape)
+
 # -----------------------------------------------------
 # CHARTS ROW 2
 # -----------------------------------------------------
