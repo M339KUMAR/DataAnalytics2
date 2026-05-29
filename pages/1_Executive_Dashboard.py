@@ -59,10 +59,7 @@ df["Workload_Stress_Flag"] = np.where(
 #st.write(df["Attrition"].dtype)
 #st.write(df["Attrition"].unique())
 
- df2= df.copy()
-  df2["Attrition_Flag"] = (
-    df["Attrition_Flag"]
-   )
+
 #filterd_df2 = df2.copy()
 # -----------------------------------------------------
 # CLEAN ATTRITION COLUMN
@@ -109,7 +106,9 @@ else:
         df["Attrition"]
     ).astype(int)
 
-# DEBUG
+df2= df.copy()
+df2["Attrition_Flag"] = (df["Attrition_Flag"])
+
 #st.write(df["Attrition"].unique())
 #st.write(df["Attrition_Flag"].value_counts())
 # -----------------------------------------------------
@@ -122,6 +121,7 @@ else:
 #st.write(df["Attrition_Flag"].value_counts())
 
 #categorical_cols.remove("Attrition")
+
 categorical_cols = df.select_dtypes(
     include="object"
 ).columns.tolist()
@@ -138,7 +138,8 @@ for col in categorical_cols:
 # -----------------------------------------------------
 # MODEL TRAINING FOR RISK SCORE
 # -----------------------------------------------------
-
+st.write(df[categorical_cols])
+st.write(df[categorical_cols].shape)
 #-----------------------------------------------------
 
 X = df.drop(
