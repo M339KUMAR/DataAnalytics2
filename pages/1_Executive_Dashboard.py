@@ -133,7 +133,8 @@ for col in categorical_cols:
 #st.dataframe(df[categorical_cols]) #->No Attrition &, Flag
 #st.write(df[categorical_cols].shape)  #->  1470, 7
 #st.write(df2)  #-> 1470, 31
-st.dataframe(df)   #->
+#st.dataframe(df)   #->
+st.write(df.shape)
 #-----------------------------------------------------
 
 X = df.drop(
