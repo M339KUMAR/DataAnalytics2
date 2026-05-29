@@ -83,17 +83,17 @@ st.sidebar.image(
 
 st.sidebar.title("HR Analytics")
 
-page = st.sidebar.radio(
-    "Navigation",
-    [
-        "Home",
-        "Executive Dashboard",
-        "Employee Risk Profile",
-        "Department Risk Analysis",
-        "Explainability",
-        "Model Performance"
-    ]
-)
+#page = st.sidebar.radio(
+#    "Navigation",
+#    [
+#        "Home",
+#        "Executive Dashboard",
+#        "Employee Risk Profile",
+#        "Department Risk Analysis",
+#        "Explainability",
+#        "Model Performance"
+#    ]
+#)
 
 # ---------------------------------------------------
 # HOME PAGE
