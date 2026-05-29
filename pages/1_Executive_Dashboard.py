@@ -86,7 +86,7 @@ df["Workload_Stress_Flag"] = np.where(
 #).columns.tolist()
 
 df2 = df.copy()
-df2['Attrition_Flag']=(df[Attrition_Flag])
+df2['Attrition_Flag']=(df['Attrition_Flag'])
 
 # ----------------------------------------------------
 # TARGET VARIABLE
