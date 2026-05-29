@@ -295,7 +295,7 @@ with col1:
 with col2:
 
     dept_attrition = (
-        filtered_df2[filtered_df2.groupby("Department")["Attrition_Flag"]]
+        filtered_df2.groupby("Department")["Attrition_Flag"]
         .mean()
         .reset_index()
     )
