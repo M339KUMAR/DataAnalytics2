@@ -132,7 +132,7 @@ for col in categorical_cols:
 # -----------------------------------------------------
 # MODEL TRAINING FOR RISK SCORE
 # -----------------------------------------------------
-st.write(df[categorical_cols])
+st.dataframe(df[categorical_cols])
 #st.write(df[categorical_cols].shape)  #->  1470, 7
 #st.write(df2)  #-> 1470, 31
 #-----------------------------------------------------
