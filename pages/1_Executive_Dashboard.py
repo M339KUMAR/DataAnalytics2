@@ -55,19 +55,19 @@ df["Workload_Stress_Flag"] = np.where(
     1,
     0
 )
-st.write(df["Attrition"].head(20))
-st.write(df["Attrition"].dtype)
-st.write(df["Attrition"].unique())
+#st.write(df["Attrition"].head(20))
+#st.write(df["Attrition"].dtype)
+#st.write(df["Attrition"].unique())
 """
 # -----------------------------------------------------
 # CLEAN ATTRITION COLUMN
 # -----------------------------------------------------
-df["Attrition"] = (
-    df["Attrition"]
-    .astype(str)
-    .str.strip()
-    .str.lower()
-)
+#df["Attrition"] = (
+#    df["Attrition"]
+#    .astype(str)
+#    .str.strip()
+#    .str.lower()
+#)
 
 # -----------------------------------------------------
 # ENCODE TARGET
@@ -77,7 +77,7 @@ df["Attrition"] = (
 #    1,
 #    0
 #)
-df["Attrition_Flag"] = ((df["Attrition"] == "yes").astype(int))
+#df["Attrition_Flag"] = ((df["Attrition"] == "yes").astype(int))
 
 #categorical_cols = df.select_dtypes(
 #    include="object"
@@ -270,7 +270,8 @@ with col1:
         risk_chart,
         use_container_width=True
     )
-
+st.write(chart_dataframe.head())
+st.write(chart_dataframe.shape)
 with col2:
 
     dept_attrition = (
@@ -296,7 +297,8 @@ with col2:
 # CHARTS ROW 2
 # -----------------------------------------------------
 col3, col4 = st.columns(2)
-
+st.write(chart_dataframe.head())
+st.write(chart_dataframe.shape)
 with col3:
 
     role_chart = px.histogram(
@@ -312,7 +314,8 @@ with col3:
     )
 
 with col4:
-
+st.write(chart_dataframe.head())
+st.write(chart_dataframe.shape)
     overtime_chart = px.box(
         filtered_df,
         x="OverTime",
