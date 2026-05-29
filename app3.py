@@ -98,7 +98,7 @@ page = st.sidebar.radio(
 # ---------------------------------------------------
 # HOME PAGE
 # ---------------------------------------------------
-if page == "Home":
+#if page == "Home":
 
     page_bg = """
        <style>
@@ -258,13 +258,15 @@ if page == "Home":
 # ---------------------------------------------------
 # PAGE ROUTING MESSAGE
 # ---------------------------------------------------
-else:
-    st.title(page)
+#else:
+    #st.title(page)
 
-    st.info(
-        f"The **{page}** page will be created in "
-        f"`pages/{page.replace(' ', '_')}.py`"
-    )
+    #st.info(
+    #    f"The **{page}** page will be created in "
+    #    f"`pages/{page.replace(' ', '_')}.py`"
+    #)
+
+
 
 
 
