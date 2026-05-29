@@ -193,14 +193,14 @@ department = st.sidebar.multiselect(
 
 job_role = st.sidebar.multiselect(
     "Job Role",
-    options=df["JobRole"].unique(),
-    default=df["JobRole"].unique()
+    options=df2["JobRole"].unique(),
+    default=df2["JobRole"].unique()
 )
 
 risk_filter = st.sidebar.multiselect(
     "Risk Category",
-    options=df["Risk_Category"].unique(),
-    default=df["Risk_Category"].unique()
+    options=df2["Risk_Category"].unique(),
+    default=df2["Risk_Category"].unique()
 )
 
 filtered_df = df[
