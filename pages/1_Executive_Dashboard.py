@@ -101,7 +101,13 @@ model = RandomForestClassifier(
 
 model.fit(X, y)
 
-risk_prob = model.predict_proba(X)[:, 1]
+#risk_prob = model.predict_proba(X)[:, 1]
+probabilities = model.predict_proba(X)
+
+if probabilities.shape[1] > 1:
+    risk_prob = probabilities[:, 1]
+else:
+    risk_prob = probabilities[:, 0]
 
 df["Risk_Score"] = risk_prob * 100
 
