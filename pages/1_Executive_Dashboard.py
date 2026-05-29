@@ -270,8 +270,7 @@ with col1:
         risk_chart,
         use_container_width=True
     )
-st.write(chart_dataframe.head())
-st.write(chart_dataframe.shape)
+
 with col2:
 
     dept_attrition = (
@@ -292,13 +291,13 @@ with col2:
         dept_chart,
         use_container_width=True
     )
-
+st.write(dept_chart.head())
+st.write(dept_chart.shape)
 # -----------------------------------------------------
 # CHARTS ROW 2
 # -----------------------------------------------------
 col3, col4 = st.columns(2)
-st.write(chart_dataframe.head())
-st.write(chart_dataframe.shape)
+
 with col3:
 
     role_chart = px.histogram(
@@ -312,8 +311,9 @@ with col3:
         role_chart,
         use_container_width=True
     )
-st.write(chart_dataframe.head())
-st.write(chart_dataframe.shape)
+st.write(role_chart.head())
+st.write(role_chart.shape)
+
 with col4:
 
     overtime_chart = px.box(
@@ -328,7 +328,8 @@ with col4:
         overtime_chart,
         use_container_width=True
     )
-
+st.write(overtime_chart.head())
+st.write(overtime_chart.shape)
 st.markdown("---")
 
 # -----------------------------------------------------
