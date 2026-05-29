@@ -105,16 +105,16 @@ else:
     ).astype(int)
 
 # DEBUG
-st.write(df["Attrition"].unique())
-st.write(df["Attrition_Flag"].value_counts())
+#st.write(df["Attrition"].unique())
+#st.write(df["Attrition_Flag"].value_counts())
 # -----------------------------------------------------
 # DEBUG CHECK
 # -----------------------------------------------------
-st.write("Attrition Counts")
-st.write(df["Attrition"].value_counts())
+#st.write("Attrition Counts")
+#st.write(df["Attrition"].value_counts())
 
-st.write("Attrition Flag Counts")
-st.write(df["Attrition_Flag"].value_counts())
+#st.write("Attrition Flag Counts")
+#st.write(df["Attrition_Flag"].value_counts())
 
 #categorical_cols.remove("Attrition")
 categorical_cols = df.select_dtypes(
@@ -257,6 +257,7 @@ df2= df.copy()
 df2["Attrition_Flag"] = (
     df["Attrition_Flag"]
 )
+filterd_df2 = df2.copy()
 # -----------------------------------------------------
 # CHARTS ROW 1
 # -----------------------------------------------------
@@ -278,7 +279,7 @@ with col1:
 with col2:
 
     dept_attrition = (
-        filtered_df.groupby("Department")
+        filtered_df2.groupby("Department")
         ["Attrition_Flag"]
         .mean()
         .reset_index()
@@ -288,7 +289,8 @@ with col2:
         dept_attrition,
         x="Department",
         y="Attrition_Flag",
-        title="Department Wise Attrition Rate"
+        title="Department Wise Attrition Rate",
+        text_auto = True
     )
 
     st.plotly_chart(
@@ -304,7 +306,7 @@ col3, col4 = st.columns(2)
 with col3:
 
     role_chart = px.histogram(
-        filtered_df,
+        filtered_df2,
         x="JobRole",
         color="Risk_Category",
         title="Risk by Job Role"
@@ -318,7 +320,7 @@ with col3:
 with col4:
 
     overtime_chart = px.box(
-        filtered_df,
+        filtered_df2,
         x="OverTime",
         y="MonthlyIncome",
         color="Attrition",
