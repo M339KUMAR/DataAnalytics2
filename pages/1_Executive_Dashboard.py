@@ -135,8 +135,8 @@ for col in categorical_cols:
 #st.write(df2)  #-> 1470, 31
 #st.dataframe(df)   #->
 #st.write(df.shape) #1470 36
-st.dataframe(df[["Attrition", "Attrition_Flag"]])
-st.dataframe(df['Attrition_Flag'])
+#st.dataframe(df[["Attrition", "Attrition_Flag"]])
+#st.dataframe(df['Attrition_Flag'])
 #-----------------------------------------------------
 
 X = df.drop(
@@ -204,10 +204,20 @@ risk_filter = st.sidebar.multiselect(
     default=df2["Risk_Category"].unique()
 )
 
-filtered_df = df[
-    (df["Department"].isin(department)) &
-    (df["JobRole"].isin(job_role)) &
-    (df["Risk_Category"].isin(risk_filter))
+# -------------------------------------
+# FILTERED VISUAL DATAFRAME
+# -------------------------------------
+filtered_df2 = df2[
+    (df2["Department"].isin(department)) &
+    (df2["JobRole"].isin(job_role)) &
+    (df2["Risk_Category"].isin(risk_filter))
+]
+
+# -------------------------------------
+# FILTERED ML DATAFRAME
+# -------------------------------------
+filtered_df = df.loc[
+    filtered_df2.index
 ]
 
 #st.write(filtered_df)
