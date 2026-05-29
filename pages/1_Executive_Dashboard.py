@@ -207,6 +207,8 @@ filtered_df = df[
     (df["Risk_Category"].isin(risk_filter))
 ]
 
+st.write(filtered_df)
+
 # -----------------------------------------------------
 # KPI METRICS
 # -----------------------------------------------------
