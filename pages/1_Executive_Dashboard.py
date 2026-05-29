@@ -140,7 +140,7 @@ for col in categorical_cols:
 # -----------------------------------------------------
 #st.write(df[categorical_cols])
 #st.write(df[categorical_cols].shape)->  1470, 7
-st.write(df)
+st.write(df2)
 #-----------------------------------------------------
 
 X = df.drop(
