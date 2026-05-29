@@ -213,7 +213,7 @@ filtered_df = df[
 total_emp = len(filtered_df)
 
 attrition_count = filtered_df[
-    filtered_df["Attrition"] == "Yes"
+    filtered_df["Attrition"] == "yes"
 ].shape[0]
 
 attrition_rate = (
