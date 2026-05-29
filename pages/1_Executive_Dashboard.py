@@ -65,7 +65,7 @@ df["Attrition"] = (
     df["Attrition"]
     .astype(str)
     .str.strip()
-    .str.upper()
+    .str.lower()
 )
 
 # -----------------------------------------------------
