@@ -55,7 +55,9 @@ df["Workload_Stress_Flag"] = np.where(
     1,
     0
 )
-
+st.write(df["Attrition"].head(20))
+st.write(df["Attrition"].dtype)
+st.write(df["Attrition"].unique())
 # -----------------------------------------------------
 # CLEAN ATTRITION COLUMN
 # -----------------------------------------------------
