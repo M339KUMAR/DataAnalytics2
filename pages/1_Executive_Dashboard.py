@@ -14,6 +14,14 @@ st.set_page_config(
     page_icon="📊",
     layout="wide"
 )
+page_bg = """
+       <style>
+       [data-testid="stAppViewContainer"] {
+       background-color: lightblue;
+       }
+        </style>
+       """
+st.markdown(page_bg, unsafe_allow_html=True)
 
 st.title("📊 Executive HR Dashboard")
 st.markdown("Monitor employee attrition risk and workforce insights")
