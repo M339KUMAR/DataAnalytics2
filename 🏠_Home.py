@@ -26,7 +26,7 @@ st.markdown("""
 }
 
 [data-testid="stSidebarNav"]::before {
-    content: "";
+    content: "HR-Analytics";
     display: block;
     margin: 0 auto 20px auto;
     height: 100px;
@@ -39,7 +39,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.sidebar.title("HR Analytics")
+#st.sidebar.title("HR Analytics")
 
 #st.logo("https://cdn-icons-png.flaticon.com/512/3135/3135715.png")
 #--------------------------------------
