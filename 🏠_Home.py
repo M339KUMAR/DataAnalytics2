@@ -18,6 +18,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+st.logo("https://cdn-icons-png.flaticon.com/512/3135/3135715.png")
 #--------------------------------------
 #Image Icons Display-->
 image_path1 = "HR_Dept_1.jpeg"
@@ -76,10 +77,10 @@ st.markdown("""
 # ---------------------------------------------------
 # SIDEBAR
 # ---------------------------------------------------
-st.sidebar.image(
-    "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-    width=120
-)
+#st.sidebar.image(
+#    "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+#    width=120
+#)
 
 st.sidebar.title("HR Analytics")
 
