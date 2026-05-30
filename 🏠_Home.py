@@ -21,16 +21,19 @@ st.set_page_config(
 
 st.markdown("""
 <style>
+
+/* Push navigation slightly downward */
 [data-testid="stSidebarNav"] {
-    padding-top: 120px;
+    padding-top: 180px;
 }
 
+/* Add image */
 [data-testid="stSidebarNav"]::before {
     content: "";
     display: block;
-    margin: 0 auto 20px auto;
-    height: 100px;
-    width: 100px;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
     background-image: url("https://cdn-icons-png.flaticon.com/512/3135/3135715.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -46,10 +49,10 @@ st.markdown("""
     font-weight: 900 !important;
     margin-top: 10px;
     margin-bottom: 25px;
+}
+
 </style>
 """, unsafe_allow_html=True)
-
-#st.sidebar.title("HR Analytics")
 
 #st.logo("https://cdn-icons-png.flaticon.com/512/3135/3135715.png")
 #--------------------------------------
