@@ -18,7 +18,6 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-import streamlit as st
 
 st.markdown("""
 <style>
@@ -39,6 +38,9 @@ st.markdown("""
 }
 </style>
 """, unsafe_allow_html=True)
+
+st.sidebar.title("HR Analytics")
+
 #st.logo("https://cdn-icons-png.flaticon.com/512/3135/3135715.png")
 #--------------------------------------
 #Image Icons Display-->
@@ -103,7 +105,7 @@ st.markdown("""
 #    width=120
 #)
 
-st.sidebar.title("HR Analytics")
+#st.sidebar.title("HR Analytics")
 
 #page = st.sidebar.radio(
 #    "Navigation",
