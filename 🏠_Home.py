@@ -18,7 +18,28 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-st.logo("https://cdn-icons-png.flaticon.com/512/3135/3135715.png")
+import streamlit as st
+
+st.markdown("""
+<style>
+[data-testid="stSidebarNav"] {
+    padding-top: 120px;
+}
+
+[data-testid="stSidebarNav"]::before {
+    content: "";
+    display: block;
+    margin: 0 auto 20px auto;
+    height: 100px;
+    width: 100px;
+    background-image: url("https://cdn-icons-png.flaticon.com/512/3135/3135715.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+</style>
+""", unsafe_allow_html=True)
+#st.logo("https://cdn-icons-png.flaticon.com/512/3135/3135715.png")
 #--------------------------------------
 #Image Icons Display-->
 image_path1 = "HR_Dept_1.jpeg"
