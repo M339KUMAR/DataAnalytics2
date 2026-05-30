@@ -24,7 +24,7 @@ st.markdown("""
 
 /* Move page navigation downward */
 [data-testid="stSidebarNav"] {
-    padding-top: 180px;
+    padding-top: 130px;
 }
 
 /* Add icon + text together at top */
@@ -35,8 +35,8 @@ st.markdown("""
     text-align: center;
     font-size: 24px;
     font-weight: 900 !important;
-    padding-top: 85px;
-    margin-bottom: 20px;
+    padding-top: 95px;
+    margin-bottom: 35px;
 
     background-image: url("https://cdn-icons-png.flaticon.com/512/3135/3135715.png");
     background-repeat: no-repeat;
