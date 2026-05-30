@@ -41,7 +41,7 @@ st.markdown("""
 }
 
 /* Add text below image */
-[data-testid="stSidebarNav"]::after {
+[data-testid="stSidebarNav"]::before {
     content: "HR Analytics";
     display: block;
     text-align: center;
@@ -53,8 +53,7 @@ st.markdown("""
 
 </style>
 """, unsafe_allow_html=True)
-
-#st.logo("https://cdn-icons-png.flaticon.com/512/3135/3135715.png")
+ 
 #--------------------------------------
 #Image Icons Display-->
 image_path1 = "HR_Dept_1.jpeg"
