@@ -26,7 +26,7 @@ st.markdown("""
 }
 
 [data-testid="stSidebarNav"]::before {
-    content: "HR-Analytics";
+    content: "";
     display: block;
     margin: 0 auto 20px auto;
     height: 100px;
@@ -36,6 +36,16 @@ st.markdown("""
     background-repeat: no-repeat;
     background-position: center;
 }
+
+/* Add text below image */
+[data-testid="stSidebarNav"]::after {
+    content: "HR Analytics";
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 900 !important;
+    margin-top: 10px;
+    margin-bottom: 25px;
 </style>
 """, unsafe_allow_html=True)
 
