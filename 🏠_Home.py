@@ -22,38 +22,31 @@ st.set_page_config(
 st.markdown("""
 <style>
 
-/* Push navigation slightly downward */
+/* Move page navigation downward */
 [data-testid="stSidebarNav"] {
     padding-top: 180px;
 }
 
-/* Add image */
-[data-testid="stSidebarNav"]::before {
-    content: "";
-    display: block;
-    width: 90px;
-    height: 90px;
-    margin: 0 auto;
-    background-image: url("https://cdn-icons-png.flaticon.com/512/3135/3135715.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-/* Add text below image */
+/* Add icon + text together at top */
 [data-testid="stSidebarNav"]::before {
     content: "HR Analytics";
+    white-space: pre-line;
     display: block;
     text-align: center;
     font-size: 24px;
     font-weight: 900 !important;
-    margin-top: 10px;
-    margin-bottom: 25px;
+    padding-top: 95px;
+    margin-bottom: 30px;
+
+    background-image: url("https://cdn-icons-png.flaticon.com/512/3135/3135715.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 85px;
 }
 
 </style>
 """, unsafe_allow_html=True)
- 
+
 #--------------------------------------
 #Image Icons Display-->
 image_path1 = "HR_Dept_1.jpeg"
