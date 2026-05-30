@@ -35,8 +35,8 @@ st.markdown("""
     text-align: center;
     font-size: 24px;
     font-weight: 900 !important;
-    padding-top: 95px;
-    margin-bottom: 30px;
+    padding-top: 85px;
+    margin-bottom: 20px;
 
     background-image: url("https://cdn-icons-png.flaticon.com/512/3135/3135715.png");
     background-repeat: no-repeat;
