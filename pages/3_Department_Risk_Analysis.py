@@ -237,9 +237,9 @@ dept_risk = (
 )
 #st.write(dept_risk)
 #st.write(dept_risk.columns)
-st.write(dept_risk["Risk_Probability"])
-st.write(dept_risk)
-st.write(dept_risk.dtypes)
+#st.write(dept_risk["Risk_Probability"])
+#st.write(dept_risk)
+#st.write(dept_risk.dtypes)
 #fig2 = px.bar(
 #    dept_risk,
 #    x="Department",
