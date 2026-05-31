@@ -235,17 +235,27 @@ dept_risk = (
     .mean()
     .reset_index()
 )
-st.write(dept_risk)
-st.write(dept_risk.columns)
+#st.write(dept_risk)
+#st.write(dept_risk.columns)
+st.write(dept_risk["Risk_Probability"])
+#fig2 = px.bar(
+#    dept_risk,
+#    x="Department",
+#    y="Risk_Probability",
+#    title="Average Risk Score by Department",
+#    #text_auto=True
+#    text_auto=".2f"
+#)
 fig2 = px.bar(
     dept_risk,
     x="Department",
     y="Risk_Probability",
-    title="Average Risk Score by Department",
-    #text_auto=True
-    text_auto=".2f"
+    title="Average Risk Score by Department"
 )
-
+fig2.update_traces(
+    text=dept_risk["Risk_Probability"].round(3),
+    textposition="outside"
+)
 st.plotly_chart(
     fig2,
     use_container_width=True
