@@ -23,35 +23,7 @@ page_bg = """
        """
 st.markdown(page_bg, unsafe_allow_html=True)
 
-st.markdown("""
-<style>
 
-.main-title {
-    font-size: 40px;
-    font-weight: bold;
-    color: #1f77b4;
-    text-align: center;
-}
-
-.sub-title {
-    font-size: 22px;
-    color: #4a4a4a;
-    text-align: center;
-}
-
-.metric-card {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
-}
-
-.sidebar .sidebar-content {
-    background-color: #f5f5f5;
-}
-
-</style>
-""", unsafe_allow_html=True)
 
 st.title("📊 Executive HR Dashboard")
 st.markdown("Monitor employee attrition risk and workforce insights")
