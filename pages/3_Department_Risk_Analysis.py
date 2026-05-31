@@ -239,17 +239,17 @@ dept_risk = (
 #st.write(dept_risk)
 #st.write(dept_risk.columns)
 #st.write(dept_risk["Risk_Probability"])
-st.write(dept_risk)
+#st.write(dept_risk)
 #st.write(dept_risk.dtypes)
 
-#fig2 = px.bar(
-#    dept_risk,
-#    x="Department",
-#    y="Risk_Probability",
-#    title="Average Risk Score by Department",
-#    #text_auto=True
-#    text_auto=".2f"
-#)
+fig2 = px.bar(
+    dept_risk,
+    x="Department",
+    y="Risk_Probability",
+    title="Average Risk Score by Department",
+    #text_auto=True
+    text_auto=".2f"
+)
 
 #fig2 = px.bar(
 #    dept_risk,
@@ -259,33 +259,20 @@ st.write(dept_risk)
 #)
 #fig2.update_yaxes(range=[0, 0.25])
 
-#fig2.update_traces(
-#    text=dept_risk["Risk_Probability"].round(3),
-#    textposition="outside"
-#)
+fig2.update_traces(
+    text=dept_risk["Risk_Probability"].round(3),
+    textposition="outside"
+)
 
 #st.write(fig2.layout.yaxis)
 #st.write(fig2.data[0].x)
 #st.write(fig2.data[0].y)
 
-#st.plotly_chart(
-#    fig2,
-#    use_container_width=True
-#)
-
-test_df = pd.DataFrame({
-    "Department": ["HR", "R&D", "Sales"],
-    "Risk": [0.1881, 0.1479, 0.1993]
-})
-
-fig = px.bar(
-    test_df,
-    x="Department",
-    y="Risk",
-    title="Test Chart"
+st.plotly_chart(
+    fig2,
+    use_container_width=True
 )
 
-st.plotly_chart(fig)
 # --------------------------------------------------
 # JOB ROLE RISK
 # --------------------------------------------------
@@ -326,18 +313,18 @@ st.plotly_chart(
 
 #-----Test charting -------
 
-test_df = pd.DataFrame({
-    "Role": ["A", "B", "C"],
-    "Risk": [0.1, 0.2, 0.3]
-})
+#test_df = pd.DataFrame({
+#    "Role": ["A", "B", "C"],
+#    "Risk": [0.1, 0.2, 0.3]
+#})
 
-fig = px.bar(
-    test_df,
-    x="Role",
-    y="Risk"
-)
+#fig = px.bar(
+#    test_df,
+#    x="Role",
+#    y="Risk"
+#)
 
-st.plotly_chart(fig)
+#st.plotly_chart(fig)
 
 
 
