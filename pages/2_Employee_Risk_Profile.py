@@ -17,6 +17,15 @@ st.set_page_config(
     layout="wide"
 )
 
+page_bg = """
+       <style>
+       [data-testid="stAppViewContainer"] {
+       background-color: lightpink;
+       }
+        </style>
+       """
+st.markdown(page_bg, unsafe_allow_html=True)
+
 st.title("👤 Employee Risk Profile")
 st.markdown(
     "Analyze employee attrition risk profile."
