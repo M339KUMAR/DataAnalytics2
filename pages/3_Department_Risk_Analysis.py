@@ -262,8 +262,11 @@ fig2.update_yaxes(range=[0, 0.25])
 #    text=dept_risk["Risk_Probability"].round(3),
 #    textposition="outside"
 #)
-st.write(fig2.data[0].y)
+
 st.write(fig2.layout.yaxis)
+st.write(fig2.data[0].x)
+st.write(fig2.data[0].y)
+
 st.plotly_chart(
     fig2,
     use_container_width=True
