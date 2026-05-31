@@ -1,1 +1,37 @@
 
+
+import streamlit as st
+import pandas as pd
+import numpy as np
+import plotly.express as px
+
+from sklearn.preprocessing import LabelEncoder
+from sklearn.ensemble import RandomForestClassifier
+
+# -----------------------------------------------------
+# PAGE CONFIG
+# -----------------------------------------------------
+st.set_page_config(
+    page_title="Employee Risk Profile",
+    page_icon="👤",
+    layout="wide"
+)
+
+st.title("👤 Employee Risk Profile")
+st.markdown(
+    "Analyze employee attrition risk profile."
+)
+
+# -----------------------------------------------------
+# LOAD DATA
+# -----------------------------------------------------
+@st.cache_data
+def load_data():
+
+    df = pd.read_excel(
+        "HR_Analytics.xlsx"
+    )
+
+    return df
+
+df = load_data()
