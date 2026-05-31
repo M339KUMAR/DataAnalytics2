@@ -49,14 +49,22 @@ df["Attrition"] = (
 
 st.write(df["Attrition"].head(20))
 st.write(df["Attrition"].unique())
-st.write(df["Attrition"].dtype)
-st.write(df["Attrition"].unique())
+#st.write(df["Attrition"].dtype)
+#st.write(df["Attrition"].unique())
 
+#df["Attrition_Flag"] = (
+#    (df["Attrition"] == "yes")
+#    .astype(int)
+#)
+# --------------------------------------------------
+# TARGET VARIABLE
+# --------------------------------------------------
 df["Attrition_Flag"] = (
-    (df["Attrition"] == "yes")
+    df["Attrition"]
     .astype(int)
 )
-
+st.write(df["Attrition"].dtype)
+st.write(df["Attrition"].unique())
 # -----------------------------------------------------
 # ENCODE CATEGORICALS
 # -----------------------------------------------------
