@@ -156,6 +156,8 @@ filtered_df2 = df2[
     (df2["Risk_Category"].isin(risk_filter))
 ]
 
+st.write(filtered_df2["Risk_Probability"].describe())
+st.write(filtered_df2["Risk_Probability"].head())
 # --------------------------------------------------
 # KPIs
 # --------------------------------------------------
