@@ -241,7 +241,8 @@ fig2 = px.bar(
     x="Department",
     y="Risk_Probability",
     title="Average Risk Score by Department",
-    text_auto=True
+    #text_auto=True
+    text_auto=".2f"
 )
 
 st.plotly_chart(
