@@ -26,7 +26,45 @@ page_bg = """
        """
 st.markdown(page_bg, unsafe_allow_html=True)
 
+#--------------------------------------
+#Metric Cards Customization-->
+# CSS for colorful metric cards
+st.markdown("""
+<style>
 
+/* Metric card styling */
+div[data-testid="stMetric"] {
+    background-color: lightyellow;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #FFB6C1;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+/* Metric label */
+div[data-testid="stMetricLabel"] {
+    color: #6A1B4D;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* Metric value */
+div[data-testid="stMetricValue"] {
+    color: #C2185B;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Delta styling */
+div[data-testid="stMetricDelta"] {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+</style>
+""", unsafe_allow_html=True)
+#--------------------------------------
 
 st.title("🏢 Department Risk Analysis")
 
