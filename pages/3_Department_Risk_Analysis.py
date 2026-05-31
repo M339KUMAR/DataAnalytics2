@@ -156,8 +156,8 @@ filtered_df2 = df2[
     (df2["Risk_Category"].isin(risk_filter))
 ]
 
-st.write(filtered_df2["Risk_Probability"].describe())
-st.write(filtered_df2["Risk_Probability"].head())
+#st.write(filtered_df2["Risk_Probability"].describe())
+#st.write(filtered_df2["Risk_Probability"].head())
 # --------------------------------------------------
 # KPIs
 # --------------------------------------------------
@@ -235,7 +235,7 @@ dept_risk = (
     .mean()
     .reset_index()
 )
-st.write(dept_risk)
+#st.write(dept_risk)
 fig2 = px.bar(
     dept_risk,
     x="Department",
