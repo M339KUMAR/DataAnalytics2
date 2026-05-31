@@ -264,9 +264,9 @@ st.write(dept_risk)
 #    textposition="outside"
 #)
 
-st.write(fig2.layout.yaxis)
-st.write(fig2.data[0].x)
-st.write(fig2.data[0].y)
+#st.write(fig2.layout.yaxis)
+#st.write(fig2.data[0].x)
+#st.write(fig2.data[0].y)
 
 #st.plotly_chart(
 #    fig2,
