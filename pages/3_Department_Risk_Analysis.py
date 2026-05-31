@@ -295,7 +295,7 @@ job_role_risk = (
     .mean()
     .reset_index()
 )
-
+st.write(job_role_risk.head(10))
 fig3 = px.bar(
     job_role_risk,
     x="JobRole",
