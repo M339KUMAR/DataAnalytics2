@@ -101,7 +101,7 @@ model = RandomForestClassifier(
 )
 
 model.fit(X, y)
-st.write(model.classes_)
+#st.write(model.classes_)
 
 # -----------------------------------------------------
 # RISK SCORE
