@@ -235,7 +235,7 @@ dept_risk = (
     .mean()
     .reset_index()
 )
-
+st.write(dept_risk)
 fig2 = px.bar(
     dept_risk,
     x="Department",
