@@ -27,7 +27,7 @@ st.markdown(
 # -----------------------------------------------------
 @st.cache_data
 def load_data():
-     df = pd.read_excel("Palo Alto Networks.xlsx")
+    df = pd.read_excel("Palo Alto Networks.xlsx")
     return df
 
 df = load_data()
