@@ -230,16 +230,18 @@ st.plotly_chart(
 # DEPARTMENT RISK SCORE
 # --------------------------------------------------
 dept_risk = (
-    filtered_df2.groupby("Department")
+    filtered_df2.groupby("Department", as_index=False)
     ["Risk_Probability"]
     .mean()
-    .reset_index()
+    #.reset_index()
 )
+
 #st.write(dept_risk)
 #st.write(dept_risk.columns)
 #st.write(dept_risk["Risk_Probability"])
-#st.write(dept_risk)
+st.write(dept_risk)
 #st.write(dept_risk.dtypes)
+
 #fig2 = px.bar(
 #    dept_risk,
 #    x="Department",
@@ -250,9 +252,9 @@ dept_risk = (
 #)
 fig2 = px.bar(
     dept_risk,
-    x="Department",
-    y="Risk_Probability",
-    title="Average Risk Score by Department"
+    x=dept_risk["Department"],
+    y=dept_risk["Risk_Probability"],
+    #title="Average Risk Score by Department"
 )
 fig2.update_traces(
     text=dept_risk["Risk_Probability"].round(3),
