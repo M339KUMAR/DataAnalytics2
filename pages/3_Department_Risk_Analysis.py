@@ -256,11 +256,14 @@ fig2 = px.bar(
     y=dept_risk["Risk_Probability"].tolist(),
     #title="Average Risk Score by Department"
 )
-fig2.update_traces(
-    text=dept_risk["Risk_Probability"].round(3),
-    textposition="outside"
-)
+fig2.update_yaxes(range=[0, 0.25])
+
+#fig2.update_traces(
+#    text=dept_risk["Risk_Probability"].round(3),
+#    textposition="outside"
+#)
 st.write(fig2.data[0].y)
+st.write(fig2.layout.yaxis)
 st.plotly_chart(
     fig2,
     use_container_width=True
