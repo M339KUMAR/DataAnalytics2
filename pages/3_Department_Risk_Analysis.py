@@ -324,6 +324,21 @@ st.plotly_chart(
     use_container_width=True
 )
 
+#-----Test charting -------
+
+test_df = pd.DataFrame({
+    "Role": ["A", "B", "C"],
+    "Risk": [0.1, 0.2, 0.3]
+})
+
+fig = px.bar(
+    test_df,
+    x="Role",
+    y="Risk"
+)
+
+st.plotly_chart(fig)
+
 
 
 
