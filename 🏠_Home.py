@@ -8,7 +8,58 @@ from ydata_profiling import ProfileReport
 import streamlit.components.v1 as components
 #from streamlit_ydata_profiling import st_profile_report
 
+#--------------------------------------------------
+#---------------------------------------------------
+#---------------------------------------------------
+#                  LOGIN UID-PSWD
+#----------------------------------------------------
+import streamlit as st
+# -----------------------------
+# LOGIN CREDENTIALS
+# -----------------------------
 
+USER_CREDENTIALS = {
+    "admin": "admin123",
+    "hrmanager": "hr2026"
+}
+
+# -----------------------------
+# SESSION STATE
+# -----------------------------
+
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
+
+# -----------------------------
+# LOGIN SCREEN
+# -----------------------------
+
+if not st.session_state.logged_in:
+
+    st.title("🔐 HR Analytics Login")
+
+    username = st.text_input("Username")
+    password = st.text_input(
+        "Password",
+        type="password"
+    )
+
+    if st.button("Login"):
+
+        if (
+            username in USER_CREDENTIALS
+            and
+            USER_CREDENTIALS[username] == password
+        ):
+
+            st.session_state.logged_in = True
+            st.success("Login Successful")
+            st.rerun()
+
+        else:
+            st.error("Invalid Username or Password")
+
+    st.stop()
 # ---------------------------------------------------
 # PAGE CONFIG
 # ---------------------------------------------------
