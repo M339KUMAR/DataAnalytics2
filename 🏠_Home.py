@@ -67,7 +67,18 @@ if not st.session_state.logged_in:
                 st.session_state.username = username
 
             st.rerun()
+            
+            if "username" in st.session_state:
 
+               st.sidebar.success(
+               f"Welcome, {st.session_state.username}"
+               )
+
+            else:
+               st.warning(
+                      "Please login first."
+                      )
+               st.stop()
         else:
             st.error("Invalid Username or Password")
 
