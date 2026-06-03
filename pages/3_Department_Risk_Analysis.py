@@ -27,6 +27,8 @@ page_bg = """
 st.markdown(page_bg, unsafe_allow_html=True)
 
 #--------------------------------------
+
+#--------------------------------------
 #Metric Cards Customization-->
 # CSS for colorful metric cards
 st.markdown("""
@@ -67,7 +69,8 @@ div[data-testid="stMetricDelta"] {
 #--------------------------------------
 
 st.title("🏢 Department Risk Analysis")
-
+#------------------------------------------
+st.success("Use Side bar Navigation Filters")
 # --------------------------------------------------
 # LOAD DATA
 # --------------------------------------------------
