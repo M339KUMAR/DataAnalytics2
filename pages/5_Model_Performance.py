@@ -345,7 +345,7 @@ st.dataframe(
         "{:.3f}"
     )
 )
-st.write("* Definetly from above table XGBOOST \
+st.write("* 📌Note: Definetly from above table XGBOOST \
 model has better performing Metrics compared to \
 Logistic Regression & Random Forest Models \
 But as a standard i have selected \
