@@ -264,7 +264,7 @@ st.plotly_chart(
 # RISK DRIVERS
 # --------------------------------------------------
 
-st.write("*******Use the Side bar Navigation to Select Employee Number/Serial Number to display the Risk Drivers for Attrition *******")
+st.success("Use the Side bar Navigation to Select Employee Number/Serial Number to display the Risk Drivers for Attrition")
 st.subheader(
     "Employee Risk Drivers"
 )
