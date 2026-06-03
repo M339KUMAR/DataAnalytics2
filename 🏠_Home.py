@@ -30,6 +30,12 @@ USER_CREDENTIALS = {
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 
+#if username in USER_CREDENTIALS and USER_CREDENTIALS[username] == password:
+
+#    st.session_state.logged_in = True
+#    st.session_state.username = username
+
+#    st.rerun()
 # -----------------------------
 # LOGIN SCREEN
 # -----------------------------
@@ -54,6 +60,12 @@ if not st.session_state.logged_in:
 
             st.session_state.logged_in = True
             st.success("Login Successful")
+            st.rerun()
+         
+            if username in USER_CREDENTIALS and USER_CREDENTIALS[username] == password:
+                st.session_state.logged_in = True
+                st.session_state.username = username
+
             st.rerun()
 
         else:
