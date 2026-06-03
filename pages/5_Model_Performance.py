@@ -35,6 +35,15 @@ st.set_page_config(
 
 st.title("📈 Model Performance Evaluation")
 #--------------------------------------------
+page_bg = """
+       <style>
+       [data-testid="stAppViewContainer"] {
+       background-color: lightblue;
+       }
+        </style>
+       """
+st.markdown(page_bg, unsafe_allow_html=True)
+#--------------------------------------------
 @st.cache_data
 def load_data():
     return pd.read_excel(
