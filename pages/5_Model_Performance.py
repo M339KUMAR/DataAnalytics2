@@ -345,7 +345,7 @@ st.dataframe(
         "{:.3f}"
     )
 )
-st.write("Definetly from above table XGBOOST model has better performing Metrics But as a standard i have selected Random Forest Metrics for Display")
+st.write("* Definetly from above table XGBOOST model has better performing Metrics But as a standard i have selected Random Forest Metrics for Display")
 #-------------------------------------------------------------------------------------------------------------------------------------------------
 st.subheader(
     "Random Forest Metrics"
