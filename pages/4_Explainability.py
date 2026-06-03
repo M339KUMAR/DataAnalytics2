@@ -267,7 +267,7 @@ st.plotly_chart(
 st.subheader(
     "Employee Risk Drivers"
 )
-
+st.write("*******Use the Side bar Navigation to Select Employee Number/Serial Number to display the Risk Drivers for Attrition *******")
 if employee["MonthlyIncome"] < 5000:
     st.warning(
         "Low Monthly Income may contribute to attrition."
@@ -284,7 +284,7 @@ if employee["YearsAtCompany"] > 10:
     )
 
 # --------------------------------------------------
-# RISK DRIVERS
+# HR Recommendations
 # --------------------------------------------------
 
 st.subheader(
