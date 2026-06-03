@@ -218,6 +218,101 @@ with col4:
 
 st.divider()
 
+# --------------------------------------------------
+# EMPLOYEE DETAILS
+# --------------------------------------------------
+st.subheader("Employee Details")
+
+st.dataframe(
+    employee.to_frame()
+)
+
+# --------------------------------------------------
+# FEATURE IMPORTANCES
+# --------------------------------------------------
+st.subheader(
+    "Top Factors Driving Attrition"
+)
+
+importance_df = pd.DataFrame({
+    "Feature": X.columns,
+    "Importance": model.feature_importances_
+})
+
+importance_df = (
+    importance_df
+    .sort_values(
+        by="Importance",
+        ascending=False
+    )
+)
+
+fig = px.bar(
+    importance_df.head(10),
+    x="Importance",
+    y="Feature",
+    orientation="h",
+    title="Feature Importance"
+)
+
+st.plotly_chart(
+    fig,
+    use_container_width=True
+)
+
+# --------------------------------------------------
+# RISK DRIVERS
+# --------------------------------------------------
+
+st.subheader(
+    "Employee Risk Drivers"
+)
+
+if employee["MonthlyIncome"] < 5000:
+    st.warning(
+        "Low Monthly Income may contribute to attrition."
+    )
+
+if employee["YearsSinceLastPromotion"] > 5:
+    st.warning(
+        "Long gap since last promotion."
+    )
+
+if employee["YearsAtCompany"] > 10:
+    st.info(
+        "Long tenure employee."
+    )
+
+# --------------------------------------------------
+# RISK DRIVERS
+# --------------------------------------------------
+
+st.subheader(
+    "HR Recommendation"
+)
+
+risk_score = employee["Risk_Probability"]
+
+if risk_score > 0.70:
+    st.error(
+        "High retention risk. Immediate intervention recommended."
+    )
+
+elif risk_score > 0.40:
+    st.warning(
+        "Moderate retention risk. Monitor closely."
+    )
+
+else:
+    st.success(
+        "Low attrition risk."
+    )
+
+
+
+
+
+
 
 
 
