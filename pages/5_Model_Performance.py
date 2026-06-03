@@ -375,9 +375,7 @@ st.subheader(
     "ROC Curve"
 )
 
-fpr,
-tpr,
-_ = roc_curve(
+fpr, tpr, _ = roc_curve(
     y_test,
     rf_prob
 )
