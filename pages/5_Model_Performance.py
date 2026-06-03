@@ -449,6 +449,13 @@ st.plotly_chart(
 )
 #---------------------------------------------
 
+if st.sidebar.button("Logout"):
+    st.session_state.logged_in = False
+    st.rerun()
+
+st.sidebar.success(
+    f"Welcome, {username}"
+)
 
 
 
