@@ -65,7 +65,7 @@ div[data-testid="stMetricDelta"] {
 
 st.title("📊 Executive HR Dashboard")
 st.markdown("Monitor employee attrition risk and workforce insights")
-
+st.success("Use Side bar Navigation Filters")
 # -----------------------------------------------------
 # LOAD DATA
 # -----------------------------------------------------
