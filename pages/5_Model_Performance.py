@@ -38,7 +38,7 @@ st.title("📈 Model Performance Evaluation")
 page_bg = """
        <style>
        [data-testid="stAppViewContainer"] {
-       background-color: lightblue;
+       background-color: lightgreen;
        }
         </style>
        """
