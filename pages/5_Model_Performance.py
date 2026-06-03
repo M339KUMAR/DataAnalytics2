@@ -183,10 +183,233 @@ with col2:
     )
     st.write(after)
 #--------------------------------------------
+st.subheader("Model Training")
 
+lr_model = LogisticRegression(
+    random_state=42,
+    max_iter=1000
+)
 
+lr_model.fit(
+    X_train_smote,
+    y_train_smote
+)
 
+lr_pred = lr_model.predict(X_test)
 
+lr_prob = lr_model.predict_proba(X_test)[:,1]
+#----------------------------------------------
+rf_model = RandomForestClassifier(
+    n_estimators=100,
+    random_state=42
+)
+
+rf_model.fit(
+    X_train_smote,
+    y_train_smote
+)
+
+rf_pred = rf_model.predict(X_test)
+
+rf_prob = rf_model.predict_proba(X_test)[:,1]
+#---------------------------------------------
+xgb_model = XGBClassifier(
+    random_state=42,
+    eval_metric="logloss"
+)
+
+xgb_model.fit(
+    X_train_smote,
+    y_train_smote
+)
+
+xgb_pred = xgb_model.predict(X_test)
+
+xgb_prob = xgb_model.predict_proba(X_test)[:,1]
+#-----------------------------------------------
+def get_metrics(
+    y_true,
+    y_pred,
+    y_prob
+):
+
+    return {
+        "Accuracy":
+            accuracy_score(
+                y_true,
+                y_pred
+            ),
+
+        "Precision":
+            precision_score(
+                y_true,
+                y_pred
+            ),
+
+        "Recall":
+            recall_score(
+                y_true,
+                y_pred
+            ),
+
+        "F1 Score":
+            f1_score(
+                y_true,
+                y_pred
+            ),
+
+        "ROC AUC":
+            roc_auc_score(
+                y_true,
+                y_prob
+            )
+    }
+#---------------------------------------------
+lr_metrics = get_metrics(
+    y_test,
+    lr_pred,
+    lr_prob
+)
+
+rf_metrics = get_metrics(
+    y_test,
+    rf_pred,
+    rf_prob
+)
+
+xgb_metrics = get_metrics(
+    y_test,
+    xgb_pred,
+    xgb_prob
+)
+#------------------------------------------------
+comparison_df = pd.DataFrame(
+    [
+        lr_metrics,
+        rf_metrics,
+        xgb_metrics
+    ],
+    index=[
+        "Logistic Regression",
+        "Random Forest",
+        "XGBoost"
+    ]
+)
+
+st.subheader(
+    "Model Comparison"
+)
+
+st.dataframe(
+    comparison_df.style.format(
+        "{:.3f}"
+    )
+)
+#--------------------------------------------
+st.subheader(
+    "Random Forest Metrics"
+)
+
+col1, col2, col3, col4, col5 = st.columns(5)
+
+with col1:
+    st.metric(
+        "Accuracy",
+        f"{rf_metrics['Accuracy']:.3f}"
+    )
+
+with col2:
+    st.metric(
+        "Precision",
+        f"{rf_metrics['Precision']:.3f}"
+    )
+
+with col3:
+    st.metric(
+        "Recall",
+        f"{rf_metrics['Recall']:.3f}"
+    )
+
+with col4:
+    st.metric(
+        "F1 Score",
+        f"{rf_metrics['F1 Score']:.3f}"
+    )
+
+with col5:
+    st.metric(
+        "ROC AUC",
+        f"{rf_metrics['ROC AUC']:.3f}"
+    )
+#--------------------------------------------
+
+st.subheader(
+    "Confusion Matrix"
+)
+
+cm = confusion_matrix(
+    y_test,
+    rf_pred
+)
+
+fig_cm = ff.create_annotated_heatmap(
+    z=cm,
+    x=[
+        "Predicted Stay",
+        "Predicted Leave"
+    ],
+    y=[
+        "Actual Stay",
+        "Actual Leave"
+    ],
+    showscale=True
+)
+
+st.plotly_chart(
+    fig_cm,
+    use_container_width=True
+)
+#-------------------------------------------
+
+st.subheader(
+    "ROC Curve"
+)
+
+fpr,
+tpr,
+_ = roc_curve(
+    y_test,
+    rf_prob
+)
+
+roc_df = pd.DataFrame({
+    "False Positive Rate": fpr,
+    "True Positive Rate": tpr
+})
+
+fig_roc = px.line(
+    roc_df,
+    x="False Positive Rate",
+    y="True Positive Rate",
+    title=f"ROC Curve (AUC = {rf_metrics['ROC AUC']:.3f})"
+)
+
+fig_roc.add_shape(
+    type="line",
+    x0=0,
+    y0=0,
+    x1=1,
+    y1=1,
+    line=dict(
+        dash="dash"
+    )
+)
+
+st.plotly_chart(
+    fig_roc,
+    use_container_width=True
+)
+#---------------------------------------------
 
 
 
