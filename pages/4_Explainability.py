@@ -20,6 +20,17 @@ st.set_page_config(
 
 st.title("🔍 Employee Attrition Explainability")
 
+page_bg = """
+       <style>
+       [data-testid="stAppViewContainer"] {
+       background-color: lightyellow;
+       }
+        </style>
+       """
+st.markdown(page_bg, unsafe_allow_html=True)
+
+
+
 # --------------------------------------------------
 # LOAD DATA
 # --------------------------------------------------
