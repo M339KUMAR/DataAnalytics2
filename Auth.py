@@ -5,7 +5,7 @@ def check_login():
 
     if not st.session_state.get("logged_in", False):
 
-        st.warning("Please login first.")
+        st.warning("Go To Home Page & Please login first...")
         st.stop()
 
     st.sidebar.success(
