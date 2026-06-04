@@ -6,6 +6,9 @@ import plotly.express as px
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 
+#-----------------------------------------------
+from auth import check_login
+check_login()
 # -----------------------------------------------------
 # PAGE CONFIG
 # -----------------------------------------------------
