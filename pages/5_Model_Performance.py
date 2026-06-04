@@ -26,6 +26,9 @@ from sklearn.metrics import (
 
 from imblearn.over_sampling import SMOTE
 
+#-----------------------------------------------
+from auth import check_login
+check_login()
 #-----------------------------------------
 st.set_page_config(
     page_title="Model Performance",
