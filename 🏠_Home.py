@@ -49,6 +49,8 @@ if not st.session_state.logged_in:
         type="password"
     )
 
+    st.write("(ex:- user : admin, pwd : admin123)")
+
     if st.button("Login"):
 
         if (
