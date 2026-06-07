@@ -86,7 +86,7 @@ df["Attrition_Flag"] = (
     .astype(int)
 ) 
 #------------------------------------------
-          ENCODE VARIABLES
+#          ENCODE VARIABLES
 #------------------------------------------
 categorical_cols = df.select_dtypes(
     include="object"
