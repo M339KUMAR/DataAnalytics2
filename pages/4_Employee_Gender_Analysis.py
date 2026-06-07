@@ -20,7 +20,7 @@ st.set_page_config(
 page_bg = """
        <style>
        [data-testid="stAppViewContainer"] {
-       background-color: Black;
+       background-color: lightgrey;
        }
         </style>
        """
@@ -90,7 +90,7 @@ tab1, tab2, tab3 = st.tabs(
 with tab1:
 
     st.subheader(
-        "Employee Dataset"
+        "Palo Alto Networks Employee Dataset"
     )
 
     with st.expander(
