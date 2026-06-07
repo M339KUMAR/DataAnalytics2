@@ -33,7 +33,7 @@ st.markdown("""
 
 /* Metric card styling */
 div[data-testid="stMetric"] {
-    background-color: Teal;
+    background-color: LightPink;
     padding: 20px;
     border-radius: 15px;
     border: 2px solid #FFB6C1;
