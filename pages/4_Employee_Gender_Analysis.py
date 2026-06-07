@@ -82,6 +82,31 @@ df["Attrition_Flag"] = (
     .astype(int)
 )
 # -----------------------------------------------------
+# MODEL
+# -----------------------------------------------------
+X = df.drop(
+    columns=[
+        "Attrition",
+        "Attrition_Flag"
+    ],
+    errors="ignore"
+)
+
+y = df["Attrition_Flag"]
+
+model = RandomForestClassifier(
+    n_estimators=100,
+    random_state=42
+)
+
+model.fit(X, y)
+#st.write(model.classes_)
+
+# -----------------------------------------------------
+# RISK SCORE
+# -----------------------------------------------------
+risk_prob = model.predict_proba(X)[:, 1]
+# -----------------------------------------------------
 # RISK CATEGORY
 # -----------------------------------------------------
 conditions = [
