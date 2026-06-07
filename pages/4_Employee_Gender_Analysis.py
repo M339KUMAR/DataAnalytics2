@@ -151,8 +151,45 @@ with tab1:
         use_container_width=True
     )
 #--------------------Tab 2 ------------------------
+with tab2:
 
+    st.subheader(
+        "Gender & Department Analysis"
+    )
 
+    col1, col2 = st.columns(2)
+
+    with col1:
+        gender_choice = st.selectbox(
+            "Select Gender",
+            ["Male", "Female"],
+            key="gender_tab2"
+        )
+
+    with col2:
+        department_choice = st.selectbox(
+            "Select Department",
+            sorted(
+                df["Department"]
+                .unique()
+            )
+        )
+
+    filtered_df = df[
+        (df["Gender"] == gender_choice)
+        &
+        (df["Department"] == department_choice)
+    ]
+
+    st.dataframe(
+        filtered_df,
+        use_container_width=True
+    )
+
+    st.write(
+        f"Records Found : {len(filtered_df)}"
+    )
+#---------------------------------------------
 
 
     
