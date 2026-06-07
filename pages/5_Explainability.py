@@ -225,7 +225,7 @@ st.divider()
 # EMPLOYEE DETAILS
 # --------------------------------------------------
 st.subheader("Employee Details")
-
+st.success("Use Side Bar to Select Employee")
 st.dataframe(
     employee.to_frame()
 )
