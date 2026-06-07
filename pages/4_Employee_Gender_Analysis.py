@@ -2,6 +2,7 @@
 import streamlit as st
 import pandas as pd 
 import numpy as np 
+import plotly.express as px
 
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
@@ -188,6 +189,76 @@ with tab2:
 
     st.write(
         f"Records Found : {len(filtered_df)}"
+    )
+
+st.divider()
+
+    st.subheader(
+        "Department-wise Gender Distribution"
+    )
+
+    # ==================================
+    # MALE EMPLOYEES BY DEPARTMENT
+    # ==================================
+    male_df = (
+        df[
+            df["Gender"] == "Male"
+        ]
+        .groupby("Department")
+        .size()
+        .reset_index(
+            name="Employee_Count"
+        )
+    )
+
+    fig_male = px.bar(
+        male_df,
+        x="Department",
+        y="Employee_Count",
+        text="Employee_Count",
+        color="Department",
+        title="Male Employees Across Departments"
+    )
+
+    fig_male.update_traces(
+        textposition="outside"
+    )
+
+    st.plotly_chart(
+        fig_male,
+        use_container_width=True
+    )
+
+    # ==================================
+    # FEMALE EMPLOYEES BY DEPARTMENT
+    # ==================================
+    female_df = (
+        df[
+            df["Gender"] == "Female"
+        ]
+        .groupby("Department")
+        .size()
+        .reset_index(
+            name="Employee_Count"
+        )
+    )
+
+    fig_female = px.bar(
+        female_df,
+        x="Department",
+        y="Employee_Count",
+        text="Employee_Count",
+        color="Department",
+        title="Female Employees Across Departments"
+    )
+
+    fig_female.update_traces(
+        textposition="outside"
+    )
+
+    st.plotly_chart(
+        fig_female,
+        use_container_width=True
     )
 #---------------------------------------------
 
