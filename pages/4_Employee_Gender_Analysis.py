@@ -87,7 +87,7 @@ df["Attrition_Flag"] = (
 ) 
 
 df1["Gender_Display"] = df["Gender"]
-st.write(df["Gender"] , df1["Gender_Display"])
+#st.write(df["Gender"] , df1["Gender_Display"])
 #------------------------------------------
 #          ENCODE VARIABLES
 #------------------------------------------
