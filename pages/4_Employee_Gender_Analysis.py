@@ -177,6 +177,7 @@ filtered_df= df
 #-------------------------------------------------
 #    Tab - 1
 #-------------------------------------------------
+st.write("Use Navigatiin Tabs:")
 tab1, tab2, tab3 = st.tabs(
     [
         "📋 Dataset",
