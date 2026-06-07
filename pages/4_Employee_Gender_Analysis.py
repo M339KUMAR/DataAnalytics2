@@ -76,11 +76,33 @@ def load_data():
   
 df = load_data()
 #filtered_df= df
-
+#----------------------Attrition Flag------------
 df["Attrition_Flag"] = (
     df["Attrition"]
     .astype(int)
 )
+# -----------------------------------------------------
+# RISK CATEGORY
+# -----------------------------------------------------
+conditions = [
+    risk_prob < 0.30,
+    (risk_prob >= 0.30)
+    & (risk_prob <= 0.60),
+    risk_prob > 0.60
+]
+
+choices = [
+    "Low",
+    "Medium",
+    "High"
+]
+
+df["Risk_Category"] = np.select(
+    conditions,
+    choices
+)
+#-----------------------------------------------
+filtered_df= df
 #-------------------------------------------------
 #    Tab - 1
 #-------------------------------------------------
