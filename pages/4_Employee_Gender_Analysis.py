@@ -79,13 +79,14 @@ def load_data():
   
 df = load_data()
 #filtered_df= df
+df1= df
 #----------------------Attrition Flag------------
 df["Attrition_Flag"] = (
     df["Attrition"]
     .astype(int)
 ) 
 
-df["Gender_Display"] = df["Gender"]
+df1["Gender_Display"] = df["Gender"]
 st.write(df["Gender"] , df["Gender_Display"])
 #------------------------------------------
 #          ENCODE VARIABLES
