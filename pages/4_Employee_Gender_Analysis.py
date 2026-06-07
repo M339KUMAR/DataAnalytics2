@@ -82,10 +82,12 @@ st.dataframe(df)
 #filtered_df= df
 df1= df
 #----------------------Attrition Flag------------
-df["Attrition_Flag"] = (
+(
+  df["Attrition_Flag"] = (
     df["Attrition"]
     .astype(int)
-) 
+  ) 
+)
 
 df1["Gender_Display"] = df["Gender"]  #----1
 #st.write(df["Gender"] , df1["Gender_Display"])
