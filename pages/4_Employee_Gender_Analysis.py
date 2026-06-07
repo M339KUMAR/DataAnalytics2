@@ -78,6 +78,7 @@ def load_data():
     return df
   
 df = load_data()
+st.dataframe(df)
 #filtered_df= df
 df1= df
 #----------------------Attrition Flag------------
