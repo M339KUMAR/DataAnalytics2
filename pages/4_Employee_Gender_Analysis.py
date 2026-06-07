@@ -20,7 +20,7 @@ st.set_page_config(
 page_bg = """
        <style>
        [data-testid="stAppViewContainer"] {
-       background-color: cyan;
+       background-color: black;
        }
         </style>
        """
