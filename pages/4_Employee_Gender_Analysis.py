@@ -196,11 +196,10 @@ st.divider()
 st.subheader(
         "Department-wise Gender Distribution"
     )
-
-    # ==================================
+# ==================================
     # MALE EMPLOYEES BY DEPARTMENT
-    # ==================================
-    male_df = (
+# ==================================
+male_df = (
         df[
             df["Gender"] == "Male"
         ]
@@ -211,7 +210,7 @@ st.subheader(
         )
     )
 
-    fig_male = px.bar(
+fig_male = px.bar(
         male_df,
         x="Department",
         y="Employee_Count",
@@ -220,19 +219,19 @@ st.subheader(
         title="Male Employees Across Departments"
     )
 
-    fig_male.update_traces(
+fig_male.update_traces(
         textposition="outside"
     )
 
-    st.plotly_chart(
+st.plotly_chart(
         fig_male,
         use_container_width=True
     )
 
-    # ==================================
+# ==================================
     # FEMALE EMPLOYEES BY DEPARTMENT
-    # ==================================
-    female_df = (
+# ==================================
+female_df = (
         df[
             df["Gender"] == "Female"
         ]
@@ -243,7 +242,7 @@ st.subheader(
         )
     )
 
-    fig_female = px.bar(
+fig_female = px.bar(
         female_df,
         x="Department",
         y="Employee_Count",
@@ -252,11 +251,11 @@ st.subheader(
         title="Female Employees Across Departments"
     )
 
-    fig_female.update_traces(
+fig_female.update_traces(
         textposition="outside"
     )
 
-    st.plotly_chart(
+st.plotly_chart(
         fig_female,
         use_container_width=True
     )
