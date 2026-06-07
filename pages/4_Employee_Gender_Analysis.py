@@ -130,3 +130,82 @@ with tab1:
 #-------------------------------------------------
 #    Tab - 2
 #-------------------------------------------------
+with tab2:
+
+    st.subheader(
+        "Gender Risk Analysis"
+    )
+
+    gender_summary = (
+        filtered_df.groupby("Gender")
+        .agg(
+            Avg_Risk=(
+                "Risk_Probability",
+                "mean"
+            ),
+
+            Attrition_Rate=(
+                "Attrition_Flag",
+                "mean"
+            ),
+
+            Employee_Count=(
+                "Gender",
+                "count"
+            )
+        )
+        .reset_index()
+    )
+
+    st.dataframe(
+        gender_summary,
+        use_container_width=True
+    )
+
+
+#Gender Detail Statistics 
+with st.expander(
+    "Detailed Gender Statistics"
+):
+
+    st.write(
+        gender_summary.describe()
+    )
+
+
+#Department Wise Gender Analysis
+with st.expander(
+    "Department Wise Gender Analysis"
+):
+
+    dept_gender = (
+        filtered_df.groupby(
+            [
+                "Department",
+                "Gender"
+            ]
+        )
+        .size()
+        .reset_index(
+            name="Employees"
+        )
+    )
+
+    st.dataframe(
+        dept_gender,
+        use_container_width=True
+    )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
