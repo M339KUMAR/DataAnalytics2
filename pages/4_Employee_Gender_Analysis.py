@@ -12,7 +12,7 @@ check_login()
 # PAGE CONFIG
 # --------------------------------------------------
 st.set_page_config(
-    page_title="Department Risk Analysis",
+    page_title="Gender Risk Analysis",
     page_icon="🏢",
     layout="wide"
 )
@@ -20,7 +20,7 @@ st.set_page_config(
 page_bg = """
        <style>
        [data-testid="stAppViewContainer"] {
-       background-color: black;
+       background-color: Black;
        }
         </style>
        """
