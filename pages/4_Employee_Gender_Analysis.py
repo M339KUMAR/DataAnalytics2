@@ -85,6 +85,22 @@ df["Attrition_Flag"] = (
     df["Attrition"]
     .astype(int)
 ) 
+#------------------------------------------
+          ENCODE VARIABLES
+#------------------------------------------
+categorical_cols = df.select_dtypes(
+    include="object"
+).columns.tolist()
+
+if "Attrition" in categorical_cols:
+    categorical_cols.remove("Attrition")
+
+encoder = LabelEncoder()
+
+for col in categorical_cols:
+    df[col] = encoder.fit_transform(
+        df[col].astype(str)
+    )
 # -----------------------------------------------------
 # MODEL
 # -----------------------------------------------------
