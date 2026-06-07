@@ -1,4 +1,4 @@
-  
+   
 import streamlit as st
 import pandas as pd 
 import numpy as np 
@@ -196,7 +196,7 @@ with tab1:
         expanded=False
     ):
         st.dataframe(
-            df1
+            df1,
             #filtered_df,
             use_container_width=True
         )
