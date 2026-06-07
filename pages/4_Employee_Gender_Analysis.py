@@ -85,6 +85,8 @@ df["Attrition_Flag"] = (
     df["Attrition"]
     .astype(int)
 ) 
+
+df["Gender_Display"] = df["Gender"]
 #------------------------------------------
 #          ENCODE VARIABLES
 #------------------------------------------
@@ -193,7 +195,7 @@ with tab1:
         st.metric(
             "Male Employees",
             (
-                filtered_df["Gender"]
+                filtered_df["Gender_Display"]
                 == "Male"
             ).sum()
         )
@@ -202,7 +204,7 @@ with tab1:
         st.metric(
             "Female Employees",
             (
-                filtered_df["Gender"]
+                filtered_df["Gender_Display"]
                 == "Female"
             ).sum()
         )
@@ -216,7 +218,7 @@ with tab2:
     )
 
     gender_summary = (
-        filtered_df.groupby("Gender").agg(
+        filtered_df.groupby("Gender_Display").agg(
             Avg_Risk=(
                 "Risk_Probability",
                 "mean"
@@ -228,7 +230,7 @@ with tab2:
             ),
 
             Employee_Count=(
-                "Gender",
+                "Gender_Display",
                 "count"
             )
         )
