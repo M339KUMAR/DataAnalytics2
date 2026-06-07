@@ -115,7 +115,42 @@ with col3:
 
 #-----------------------------------------------
 
+tab1, tab2, tab3 = st.tabs(
+    [
+        "📋 Dataset Explorer",
+        "👥 Gender Insights",
+        "📊 Gender Visuals"
+    ]
+)
 
+#-------------------Tab 1--------------------------
+with tab1:
+
+    st.subheader("Complete Employee Dataset")
+
+    st.dataframe(
+        df,
+        use_container_width=True
+    )
+
+    gender_filter = st.selectbox(
+        "Select Gender",
+        ["Male", "Female"]
+    )
+
+    gender_df = df[
+        df["Gender"] == gender_filter
+    ]
+
+    st.subheader(
+        f"{gender_filter} Employees"
+    )
+
+    st.dataframe(
+        gender_df,
+        use_container_width=True
+    )
+#--------------------------------------------
 
 
 
