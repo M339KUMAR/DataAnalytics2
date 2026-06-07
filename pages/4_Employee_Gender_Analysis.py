@@ -79,8 +79,41 @@ def load_data():
   
 df = load_data()
 st.dataframe(df)
+# --------------------------------------------------
+# METRICS
+# --------------------------------------------------
 
+total_employees = len(df)
 
+male_employees = (
+    df["Gender"] == "Male"
+).sum()
+
+female_employees = (
+    df["Gender"] == "Female"
+).sum()
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.metric(
+        "Total Employees",
+        total_employees
+    )
+
+with col2:
+    st.metric(
+        "Male Employees",
+        male_employees
+    )
+
+with col3:
+    st.metric(
+        "Female Employees",
+        female_employees
+    )
+
+#-----------------------------------------------
 
 
 
