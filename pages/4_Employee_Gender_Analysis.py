@@ -100,7 +100,7 @@ encoder = LabelEncoder()
 for col in categorical_cols:
     df[col] = encoder.fit_transform(
         df[col].astype(str)
-    )
+    ) 
 # -----------------------------------------------------
 # MODEL
 # -----------------------------------------------------
