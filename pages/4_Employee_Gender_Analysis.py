@@ -157,17 +157,17 @@ df["Risk_Category"] = np.select(
 )
 #-----------------------------------------------
 filtered_df= df
-st.write("Gender unique values:")
-st.write(df["Gender"].unique())
+#st.write("Gender unique values:")
+#st.write(df["Gender"].unique())
 
-st.write("Gender_Display unique values:")
-st.write(df["Gender_Display"].unique())
+#st.write("Gender_Display unique values:")
+#st.write(df["Gender_Display"].unique())
 
-st.write(df[["Gender", "Gender_Display"]].head(5))
+#st.write(df[["Gender", "Gender_Display"]].head(5))
 
-raw_df = pd.read_excel("Palo Alto Networks.xlsx")
+#raw_df = pd.read_excel("Palo Alto Networks.xlsx")
 
-st.write(raw_df["Gender"].value_counts(),"hello")
+#st.write(raw_df["Gender"].value_counts(),"hello")
 #-------------------------------------------------
 #    Tab - 1
 #-------------------------------------------------
@@ -207,7 +207,7 @@ with tab1:
             "Male Employees",
             (
                 filtered_df["Gender_Display"]
-                == "Male"
+                == 1
             ).sum()
         )
 
@@ -216,7 +216,7 @@ with tab1:
             "Female Employees",
             (
                 filtered_df["Gender_Display"]
-                == "Female"
+                == 0
             ).sum()
         )
 #-------------------------------------------------
