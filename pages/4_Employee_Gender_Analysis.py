@@ -28,7 +28,16 @@ st.markdown(page_bg, unsafe_allow_html=True)
 
 
 #------------------Load Dataframe----------------
-filtered_df= pd.read_excel(Palo Alto Networks.xlsx)
+# --------------------------------------------------
+# LOAD DATA
+# --------------------------------------------------
+@st.cache_data
+def load_data():
+    df = pd.read_excel("Palo Alto Networks.xlsx")
+    return df
+  
+df = load_data()
+filtered_df= df
 #-------------------------------------------------
 #    Tab - 1
 #-------------------------------------------------
