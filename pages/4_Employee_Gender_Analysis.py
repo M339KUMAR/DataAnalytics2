@@ -69,6 +69,7 @@ div[data-testid="stMetricDelta"] {
 """, unsafe_allow_html=True)
 #--------------------------------------
 st.subheader("Employee Risk Analysis based on Gender:")
+st.divider()
 #------------------Load Dataframe----------------
 # --------------------------------------------------
 # LOAD DATA
