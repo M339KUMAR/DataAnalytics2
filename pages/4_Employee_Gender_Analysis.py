@@ -16,7 +16,7 @@ check_login()
 # PAGE CONFIG
 # --------------------------------------------------
 st.set_page_config(
-    page_title="Employee Gender Risk Analysis",
+    page_title="👤Employee Gender Risk Analysis",
     page_icon="🏢",
     layout="wide"
 )
@@ -68,7 +68,7 @@ div[data-testid="stMetricDelta"] {
 </style>
 """, unsafe_allow_html=True)
 #--------------------------------------
-st.subheader("Employee Risk Analysis based on Gender:")
+st.subheader(" 👤 Employee Risk Analysis based on Gender:")
 st.divider()
 #------------------Load Dataframe----------------
 # --------------------------------------------------
