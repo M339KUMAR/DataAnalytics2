@@ -260,14 +260,108 @@ st.plotly_chart(
         fig_female,
         use_container_width=True
     )
-#---------------------------------------------
+#------------------------Tab 3---------------------
+df_model = df.copy()
 
+categorical_cols = (
+    df_model.select_dtypes(
+        include="object"
+    )
+    .columns
+    .tolist()
+)
 
-    
-                
-         
-        
-            
+if "Attrition" in categorical_cols:
+    categorical_cols.remove(
+        "Attrition"
+    )
+
+encoder = LabelEncoder()
+
+for col in categorical_cols:
+    df_model[col] = encoder.fit_transform(
+        df_model[col].astype(str)
+    )
+
+X = df_model.drop(
+    columns=["Attrition"],
+    errors="ignore"
+)
+
+y = df_model["Attrition"].astype(int)
+
+model = RandomForestClassifier(
+    n_estimators=100,
+    random_state=42
+)
+
+model.fit(X, y)
+
+df["Risk_Probability"] = (
+    model.predict_proba(X)[:, 1]
+)           
+#-------------------------------------------
+with tab3:
+
+    st.subheader(
+        "Risk Probability Analysis"
+    )
+
+    gender_risk = (
+        df.groupby("Gender")
+        ["Risk_Probability"]
+        .mean()
+        .reset_index()
+    )
+
+    fig1 = px.bar(
+        gender_risk,
+        x="Gender",
+        y="Risk_Probability",
+        color="Gender",
+        text_auto=".2%"
+    )
+
+    fig1.update_layout(
+        title="Average Risk Probability by Gender"
+    )
+
+    st.plotly_chart(
+        fig1,
+        use_container_width=True
+    )
+#----------------------------------------------
+dept_gender = (
+        df.groupby(
+            [
+                "Department",
+                "Gender"
+            ]
+        )
+        .size()
+        .reset_index(
+            name="Employee_Count"
+        )
+    )
+
+    fig2 = px.bar(
+        dept_gender,
+        x="Department",
+        y="Employee_Count",
+        color="Gender",
+        barmode="group",
+        text_auto=True
+    )
+
+    fig2.update_layout(
+        title="Department-wise Male & Female Employee Count"
+    )
+
+    st.plotly_chart(
+        fig2,
+        use_container_width=True
+    )
+#---------------------------------------------         
                 
 
 
