@@ -4,6 +4,10 @@ import streamlit as st
 import pandas as pd 
 import numpy as np 
 
+from sklearn.preprocessing import LabelEncoder
+from sklearn.ensemble import RandomForestClassifier
+
+#------------------------
 
 #-----------------------------------------------
 from Auth import check_login
