@@ -87,13 +87,6 @@ df["Attrition_Flag"] = (
 ) 
 
 df["Gender_Display"] = df["Gender"]
-st.write("Gender unique values:")
-st.write(df["Gender"].unique())
-
-st.write("Gender_Display unique values:")
-st.write(df["Gender_Display"].unique())
-
-st.write(df[["Gender", "Gender_Display"]].head(5))
 #------------------------------------------
 #          ENCODE VARIABLES
 #------------------------------------------
@@ -164,6 +157,14 @@ df["Risk_Category"] = np.select(
 )
 #-----------------------------------------------
 filtered_df= df
+st.write("Gender unique values:")
+st.write(df["Gender"].unique())
+
+st.write("Gender_Display unique values:")
+st.write(df["Gender_Display"].unique())
+
+st.write(df[["Gender", "Gender_Display"]].head(5))
+
 #-------------------------------------------------
 #    Tab - 1
 #-------------------------------------------------
