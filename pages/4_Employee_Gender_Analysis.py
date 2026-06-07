@@ -118,7 +118,13 @@ model = RandomForestClassifier(
     n_estimators=100,
     random_state=42
 )
-
+#--------------
+st.write(
+    X.select_dtypes(
+        include="object"
+    ).columns.tolist()
+)
+#---------------
 model.fit(X, y)
 #st.write(model.classes_)
 
