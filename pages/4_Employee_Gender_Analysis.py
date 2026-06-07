@@ -137,8 +137,7 @@ with tab2:
     )
 
     gender_summary = (
-        filtered_df.groupby("Gender")
-        .agg(
+        filtered_df.groupby("Gender").agg(
             Avg_Risk=(
                 "Risk_Probability",
                 "mean"
