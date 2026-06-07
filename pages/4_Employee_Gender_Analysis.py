@@ -75,7 +75,12 @@ def load_data():
     return df
   
 df = load_data()
-filtered_df= df
+#filtered_df= df
+
+df["Attrition_Flag"] = (
+    df["Attrition"]
+    .astype(int)
+)
 #-------------------------------------------------
 #    Tab - 1
 #-------------------------------------------------
