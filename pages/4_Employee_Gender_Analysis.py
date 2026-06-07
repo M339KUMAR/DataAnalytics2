@@ -86,7 +86,7 @@ df["Attrition_Flag"] = (
 ) 
 
 df["Gender_Display"] = df["Gender"]
-st.write("hi")#, df["Gender_Display"].value_counts())
+st.write(df["Gender"] , df["Gender_Display"])
 #------------------------------------------
 #          ENCODE VARIABLES
 #------------------------------------------
