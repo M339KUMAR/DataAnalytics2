@@ -5,9 +5,29 @@ import pandas as pd
 import numpy as np 
 
 
+#-----------------------------------------------
+from Auth import check_login
+check_login()
+# --------------------------------------------------
+# PAGE CONFIG
+# --------------------------------------------------
+st.set_page_config(
+    page_title="Department Risk Analysis",
+    page_icon="🏢",
+    layout="wide"
+)
+
+page_bg = """
+       <style>
+       [data-testid="stAppViewContainer"] {
+       background-color: cyan;
+       }
+        </style>
+       """
+st.markdown(page_bg, unsafe_allow_html=True)
 
 
-
+#------------------Load Dataframe----------------
 filtered_df= pd.read_excel(Palo Alto Networks.xlsx)
 #-------------------------------------------------
 #    Tab - 1
