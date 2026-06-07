@@ -9,8 +9,8 @@ from sklearn.ensemble import RandomForestClassifier
 #------------------------
 
 #-----------------------------------------------
-from Auth import check_login
-check_login()
+#from Auth import check_login
+#check_login()
 # --------------------------------------------------
 # PAGE CONFIG
 # --------------------------------------------------
