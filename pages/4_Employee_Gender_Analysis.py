@@ -108,7 +108,7 @@ for col in categorical_cols:
         df[col].astype(str)
     ) 
 
-df1["Attrition_Flag"] ==df["Attrition_Flag"]#----2
+#df1["Attrition_Flag"] ==df["Attrition_Flag"]#----2
 # -----------------------------------------------------
 # MODEL
 # -----------------------------------------------------
