@@ -86,7 +86,7 @@ df["Attrition_Flag"] = (
     .astype(int)
 ) 
 
-df1["Gender_Display"] = df["Gender"]
+df1["Gender_Display"] = df["Gender"]  #----1
 #st.write(df["Gender"] , df1["Gender_Display"])
 #------------------------------------------
 #          ENCODE VARIABLES
@@ -104,6 +104,8 @@ for col in categorical_cols:
     df[col] = encoder.fit_transform(
         df[col].astype(str)
     ) 
+
+df1["Attrition_Flag"] ==df["Attrition_Flag"]#----2
 # -----------------------------------------------------
 # MODEL
 # -----------------------------------------------------
@@ -136,6 +138,7 @@ model.fit(X, y)
 # -----------------------------------------------------
 risk_prob = model.predict_proba(X)[:, 1]
 df["Risk_Probability"] = risk_prob
+df1["Risk_Probability"] = df["Risk_Probability"]#----3
 # -----------------------------------------------------
 # RISK CATEGORY
 # -----------------------------------------------------
@@ -156,7 +159,9 @@ df["Risk_Category"] = np.select(
     conditions,
     choices
 )
-#-----------------------------------------------
+
+df1["Risk_Category"] = df["Risk_Category"]#----4
+#----------------------------------------------
 filtered_df= df
 #st.write("Gender unique values:")
 #st.write(df["Gender"].unique())
@@ -191,7 +196,8 @@ with tab1:
         expanded=False
     ):
         st.dataframe(
-            filtered_df,
+            df1
+            #filtered_df,
             use_container_width=True
         )
 
@@ -200,15 +206,16 @@ with tab1:
     with col1:
         st.metric(
             "Total Employees",
-            len(filtered_df)
+            len(df1)
         )
 
     with col2:
         st.metric(
             "Male Employees",
             (
-                filtered_df["Gender_Display"]
-                == 1
+                #filtered_df["Gender_Display"]
+                #== 1
+                df1["Gender_Display"]=="Male"
             ).sum()
         )
 
@@ -216,8 +223,9 @@ with tab1:
         st.metric(
             "Female Employees",
             (
-                filtered_df["Gender_Display"]
-                == 0
+                #filtered_df["Gender_Display"]
+                #== 0
+                df1["Gender_Display"]=="Female"
             ).sum()
         )
 #-------------------------------------------------
@@ -230,7 +238,8 @@ with tab2:
     )
 
     gender_summary = (
-        filtered_df.groupby("Gender_Display").agg(
+        #filtered_df
+         df1.groupby("Gender_Display").agg(
             Avg_Risk=(
                 "Risk_Probability",
                 "mean"
@@ -271,7 +280,8 @@ with st.expander(
 ):
 
     dept_gender = (
-        filtered_df.groupby(
+        #filtered_df
+        df1.groupby(
             [
                 "Department",
                 "Gender"
