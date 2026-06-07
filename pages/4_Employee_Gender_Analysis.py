@@ -67,7 +67,35 @@ div[data-testid="stMetricDelta"] {
 
 </style>
 """, unsafe_allow_html=True)
-#--------------------------------------
+#-------------------------------------------------
+st.markdown("""
+<style>
+
+/* Tab Container */
+button[data-baseweb="tab"] {
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px 25px;
+}
+
+/* Selected Tab */
+button[data-baseweb="tab"][aria-selected="true"] {
+    background-color: #1f77b4;
+    color: white;
+    border: 2px solid #1f77b4;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+}
+
+/* Unselected Tabs */
+button[data-baseweb="tab"][aria-selected="false"] {
+    background-color: #f0f2f6;
+    color: black;
+}
+
+</style>
+""", unsafe_allow_html=True)
+#-------------------------------------------------
 st.subheader(" 👤 Employee Risk Analysis based on Gender:")
 st.divider()
 #------------------Load Dataframe----------------
