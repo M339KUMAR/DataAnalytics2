@@ -167,7 +167,7 @@ st.write(df[["Gender", "Gender_Display"]].head(5))
 
 raw_df = pd.read_excel("Palo Alto Networks.xlsx")
 
-st.write(raw_df["Gender"].value_counts())
+st.write(raw_df["Gender"].value_counts(),"hello")
 #-------------------------------------------------
 #    Tab - 1
 #-------------------------------------------------
