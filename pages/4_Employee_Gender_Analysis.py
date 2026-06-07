@@ -15,7 +15,7 @@ check_login()
 # PAGE CONFIG
 # --------------------------------------------------
 st.set_page_config(
-    page_title="Gender Risk Analysis",
+    page_title="Employee Gender Risk Analysis",
     page_icon="🏢",
     layout="wide"
 )
@@ -150,7 +150,7 @@ with tab1:
         gender_df,
         use_container_width=True
     )
-#--------------------------------------------
+#--------------------Tab 2 ------------------------
 
 
 
