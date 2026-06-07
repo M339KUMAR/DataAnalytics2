@@ -132,7 +132,7 @@ model.fit(X, y)
 # RISK SCORE
 # -----------------------------------------------------
 risk_prob = model.predict_proba(X)[:, 1]
-df["Risk_Probability"] == risk_prob
+df["Risk_Probability"] = risk_prob
 # -----------------------------------------------------
 # RISK CATEGORY
 # -----------------------------------------------------
