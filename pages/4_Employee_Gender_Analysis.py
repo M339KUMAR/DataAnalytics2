@@ -344,7 +344,7 @@ dept_gender = (
         )
     )
 
-    fig2 = px.bar(
+fig2 = px.bar(
         dept_gender,
         x="Department",
         y="Employee_Count",
@@ -353,11 +353,11 @@ dept_gender = (
         text_auto=True
     )
 
-    fig2.update_layout(
+fig2.update_layout(
         title="Department-wise Male & Female Employee Count"
     )
 
-    st.plotly_chart(
+st.plotly_chart(
         fig2,
         use_container_width=True
     )
