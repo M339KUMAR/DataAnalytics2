@@ -193,7 +193,7 @@ with tab2:
 
 st.divider()
 
-    st.subheader(
+st.subheader(
         "Department-wise Gender Distribution"
     )
 
