@@ -359,9 +359,10 @@ with st.expander(
     st.dataframe(bottom_10)
 #---------------------------------------------------
 #------------------Employee Count Marital Status---------
+st.write("Select Attrition Choise 1-Yes, 0-No ")
 attrition_choice = st.selectbox(
     "Select Attrition Status",
-    ["Yes", "No"]
+    [1, 0]
 )
 
 filtered_marital = (
