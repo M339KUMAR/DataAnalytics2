@@ -2,6 +2,7 @@
 
 import streamlit as st
 import pandas as pd
+import plorly.express as px
 
 
 from Auth import check_login
