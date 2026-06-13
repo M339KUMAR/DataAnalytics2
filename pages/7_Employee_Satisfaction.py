@@ -13,7 +13,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("📈 Employee Satisfaction Stats:")
+st.title("📈 Employee Satisfaction Statistics:")
 #--------------------------------------------
 page_bg = """
        <style>
@@ -23,3 +23,7 @@ page_bg = """
         </style>
        """
 st.markdown(page_bg, unsafe_allow_html=True)
+#----------------------------------------------
+
+
+
