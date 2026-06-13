@@ -358,8 +358,33 @@ with st.expander(
 ):
     st.dataframe(bottom_10)
 #---------------------------------------------------
+#------------------Employee Count Marital Status---------
+attrition_choice = st.selectbox(
+    "Select Attrition Status",
+    ["Yes", "No"]
+)
 
+filtered_marital = (
+    df[
+        df["Attrition"] == attrition_choice
+    ]
+    .groupby("MaritalStatus")
+    .size()
+    .reset_index(
+        name="Employee_Count"
+    )
+)
 
+fig = px.pie(
+    filtered_marital,
+    names="MaritalStatus",
+    values="Employee_Count",
+    hole=0.6,
+    title=f"Marital Status Distribution - Attrition {attrition_choice}"
+)
+
+st.plotly_chart(fig, use_container_width=True)
+#------------------------------------------------
 
 
 
