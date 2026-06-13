@@ -10,11 +10,12 @@ check_login()
 #-----------------------------------------
 st.set_page_config(
     page_title="Employee Satisfaction",
-    page_icon="📈",
+    #page_icon="📈",
+    page_icon ="👷"
     layout="wide"
 )
 
-st.title("📈 Employee Satisfaction Statistics:")
+st.title("👷 Employee Satisfaction Statistics:")
 #--------------------------------------------
 page_bg = """
        <style>
