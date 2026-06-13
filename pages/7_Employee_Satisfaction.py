@@ -8,17 +8,17 @@ from Auth import check_login
 check_login()
 #-----------------------------------------
 st.set_page_config(
-    page_title="Model Performance",
+    page_title="Employee Satisfaction",
     page_icon="📈",
     layout="wide"
 )
 
-st.title("📈 Model Performance Evaluation")
+st.title("📈 Employee Satisfaction Stats:")
 #--------------------------------------------
 page_bg = """
        <style>
        [data-testid="stAppViewContainer"] {
-       background-color: lightgreen;
+       background-color: lightgold;
        }
         </style>
        """
