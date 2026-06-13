@@ -1,6 +1,6 @@
 
 
-import strewmlit as st
+import streamlit as st
 
 
 
