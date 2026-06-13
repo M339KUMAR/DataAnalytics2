@@ -18,7 +18,7 @@ st.title("📈 Employee Satisfaction Statistics:")
 page_bg = """
        <style>
        [data-testid="stAppViewContainer"] {
-       background-color: Violet;
+       background-color: Navy Blue;
        }
         </style>
        """
