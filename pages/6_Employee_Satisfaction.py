@@ -388,7 +388,70 @@ fig = px.pie(
 
 st.plotly_chart(fig, use_container_width=True)
 #------------------------------------------------
+#-----------Emp Satisfaction * Rating ---------
 
+df["Satisfaction_Score"] = (
+    df["JobSatisfaction"]
+    + df["EnvironmentSatisfaction"]
+    + df["RelationshipSatisfaction"]
+    + df["WorkLifeBalance"]
+) / 4
+
+overall_satisfaction = round(
+    df["Satisfaction_Score"].mean(),
+    2
+)
+
+star_rating = round(
+    (overall_satisfaction / 4) * 5
+)
+
+#-------------------------------------------------
+#-------------------------------------------------
+#------------Display Stars------------------------
+filled_star = "⭐"
+empty_star = "☆"
+
+stars = (
+    filled_star * star_rating
+    +
+    empty_star * (5 - star_rating)
+)
+
+st.subheader(
+    "Overall Employee Satisfaction Rating"
+)
+
+st.markdown(
+    f"<h1 style='text-align:center;'>{stars}</h1>",
+    unsafe_allow_html=True
+)
+
+#st.markdown(
+#    f"<h3 style='text-align:center;'>"
+#    f"{overall_satisfaction:.2f} / 4.00"
+#    f"</h3>",
+#    unsafe_allow_html=True
+#)
+#-------------------------------
+st.markdown(
+    f"""
+    <div style="
+        background-color:#FFF8DC;
+        padding:20px;
+        border-radius:15px;
+        text-align:center;
+        box-shadow:2px 2px 8px rgba(0,0,0,0.2);
+    ">
+        <h2>Employee Satisfaction Rating</h2>
+        <h1>{stars}</h1>
+        <h3>{overall_satisfaction:.2f} / 4.00</h3>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+#--------------
 
 
 
