@@ -11,7 +11,7 @@ check_login()
 st.set_page_config(
     page_title="Employee Satisfaction",
     #page_icon="📈",
-    page_icon ="👷"
+    page_icon ="👷",
     layout="wide"
 )
 
