@@ -18,7 +18,7 @@ st.title("📈 Employee Satisfaction Statistics:")
 page_bg = """
        <style>
        [data-testid="stAppViewContainer"] {
-       background-color: lightgold;
+       background-color: Violet;
        }
         </style>
        """
@@ -31,7 +31,7 @@ st.markdown("""
 
 /* Metric card styling */
 div[data-testid="stMetric"] {
-    background-color: Purpule;
+    background-color: lightyellow;
     padding: 20px;
     border-radius: 15px;
     border: 2px solid #FFB6C1;
