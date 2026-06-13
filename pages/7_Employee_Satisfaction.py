@@ -18,11 +18,7 @@ st.title("📈 Employee Satisfaction Statistics:")
 page_bg = """
        <style>
        [data-testid="stAppViewContainer"] {
-       background-color: NavyBlue;
-       }
-        </style>
-       """
-st.markdown(page_bg, unsafe_allow_html=True)
+       background-color: Violet
 #---------------------------------------------
 #Metric Cards Customization-->
 # CSS for colorful metric cards
