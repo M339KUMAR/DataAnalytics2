@@ -395,7 +395,7 @@ st.plotly_chart(fig, use_container_width=True)
 # --------------------------------------------------
 
 st.subheader(
-    "Marital Status & Attrition Analysis by Gender"
+    "Marital Status & Attrition Analysis by Gender - Overall"
 )
 
 col1, col2 = st.columns(2)
