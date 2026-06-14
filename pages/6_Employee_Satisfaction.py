@@ -425,7 +425,7 @@ with col1:
         values="Employee_Count",
         color="MaritalStatus",#"Attrition",
         hole=0.60,
-        title="Male Employee Attririon"
+        title="Male Employee Attrition"
         #title=f"Male Employees: {len(male_df)}"
     )
 
