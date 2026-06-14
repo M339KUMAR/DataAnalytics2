@@ -423,7 +423,7 @@ with col1:
         values="Employee_Count",
         color="Attrition",
         hole=0.60,
-        title="Male Employees: {len(male_df)}"
+        title=f"Male Employees: {len(male_df)}"
     )
 
     fig_male.update_traces(
@@ -454,14 +454,14 @@ with col2:
             name="Employee_Count"
         )
     )
-
+    
     fig_female = px.pie(
         female_df,
         names="MaritalStatus",
         values="Employee_Count",
         color="Attrition",
         hole=0.60,
-        title="Female Employees: {len(female_df)}"
+        title=f"Female Employees: {len(female_df}"
     )
 
     fig_female.update_traces(
