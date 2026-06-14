@@ -461,7 +461,7 @@ with col2:
         values="Employee_Count",
         color="Attrition",
         hole=0.60,
-        title=f"Female Employees: {len(female_df}"
+        title=f"Female Employees: {len(female_df)}"
     )
 
     fig_female.update_traces(
