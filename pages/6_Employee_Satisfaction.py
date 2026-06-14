@@ -425,7 +425,8 @@ with col1:
         values="Employee_Count",
         color="MaritalStatus",#"Attrition",
         hole=0.60,
-        title=f"Male Employees: {len(male_df)}"
+        title="Male Employee Attririon"
+        #title=f"Male Employees: {len(male_df)}"
     )
 
     fig_male.update_traces(
@@ -463,7 +464,8 @@ with col2:
         values="Employee_Count",
         color="MaritalStatus", #"Attrition",
         hole=0.60,
-        title=f"Female Employees: {len(female_df)}"
+        title= "Female Employees Attrition"
+        #title=f"Female Employees: {len(female_df)}"
     )
 
     fig_female.update_traces(
