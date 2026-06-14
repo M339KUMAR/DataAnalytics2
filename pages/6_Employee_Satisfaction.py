@@ -434,6 +434,7 @@ st.subheader(
 #    f"</h3>",
 #    unsafe_allow_html=True
 #)
+overall_rating = (overall_satisfaction/4)*5
 #-------------------------------
 st.markdown(
     f"""
@@ -446,7 +447,8 @@ st.markdown(
     ">
         <h2>Employee Satisfaction Rating</h2>
         <h1>{stars}</h1>
-        <h3>{overall_satisfaction:.2f} / 4.00</h3>
+        #<h3>{overall_satisfaction:.2f} / 4.00</h3>
+        <h3>{overall_rating:.2f}</h3>
     </div>
     """,
     unsafe_allow_html=True
