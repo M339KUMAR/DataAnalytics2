@@ -422,10 +422,10 @@ st.subheader(
     "Overall Employee Satisfaction Rating"
 )
 
-st.markdown(
-    f"<h1 style='text-align:center;'>{stars}</h1>",
-    unsafe_allow_html=True
-)
+#st.markdown(
+#    f"<h1 style='text-align:center;'>{stars}</h1>",
+#    unsafe_allow_html=True
+#)
 
 #st.markdown(
 #    f"<h3 style='text-align:center;'>"
