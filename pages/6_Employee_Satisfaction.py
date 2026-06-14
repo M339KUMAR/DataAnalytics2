@@ -447,8 +447,8 @@ st.markdown(
     ">
         <h2>Employee Satisfaction Rating</h2>
         <h1>{stars}</h1>
-        #<h3>{overall_satisfaction:.2f} / 4.00</h3>
-        <h3>{overall_rating:.2f}</h3>
+        <h3>{overall_satisfaction:.2f} / 4.00 "On 4-Point Scale" </h3>
+        <h3>{overall_rating:.2f}  "On 5-Point Scale"</h3>
     </div>
     """,
     unsafe_allow_html=True
