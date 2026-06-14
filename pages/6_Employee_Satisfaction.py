@@ -387,6 +387,92 @@ fig = px.pie(
 )
 
 st.plotly_chart(fig, use_container_width=True)
+#-------------------MS - Attrition - Gender----------
+# --------------------------------------------------
+# MARITAL STATUS VS ATTRITION BY GENDER
+# --------------------------------------------------
+
+st.subheader(
+    "Marital Status & Attrition Analysis by Gender"
+)
+
+col1, col2 = st.columns(2)
+
+# =====================================
+# MALE EMPLOYEES
+# =====================================
+
+with col1:
+
+    male_df = (
+        df[
+            df["Gender"] == "Male"
+        ]
+        .groupby(
+            ["MaritalStatus", "Attrition"]
+        )
+        .size()
+        .reset_index(
+            name="Employee_Count"
+        )
+    )
+
+    fig_male = px.pie(
+        male_df,
+        names="MaritalStatus",
+        values="Employee_Count",
+        color="Attrition",
+        hole=0.60,
+        title="Male Employees"
+    )
+
+    fig_male.update_traces(
+        textposition="inside",
+        textinfo="percent+label"
+    )
+
+    st.plotly_chart(
+        fig_male,
+        use_container_width=True
+    )
+
+# =====================================
+# FEMALE EMPLOYEES
+# =====================================
+
+with col2:
+
+    female_df = (
+        df[
+            df["Gender"] == "Female"
+        ]
+        .groupby(
+            ["MaritalStatus", "Attrition"]
+        )
+        .size()
+        .reset_index(
+            name="Employee_Count"
+        )
+    )
+
+    fig_female = px.pie(
+        female_df,
+        names="MaritalStatus",
+        values="Employee_Count",
+        color="Attrition",
+        hole=0.60,
+        title="Female Employees"
+    )
+
+    fig_female.update_traces(
+        textposition="inside",
+        textinfo="percent+label"
+    )
+
+    st.plotly_chart(
+        fig_female,
+        use_container_width=True
+    )
 #------------------------------------------------
 #-----------Emp Satisfaction * Rating ---------
 
