@@ -387,6 +387,8 @@ fig = px.pie(
 )
 
 st.plotly_chart(fig, use_container_width=True)
+st.write(f"Total Records found: {len(filtered_marital)}
+
 #-------------------MS - Attrition - Gender----------
 # --------------------------------------------------
 # MARITAL STATUS VS ATTRITION BY GENDER
