@@ -41,7 +41,7 @@ if "logged_in" not in st.session_state:
 # -----------------------------
 
 if not st.session_state.logged_in:
-
+    st.title("Palo Alto Networks Company")
     st.title("🔐 HR Analytics Login")
 
     username = st.text_input("Username")
